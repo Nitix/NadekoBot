@@ -18,6 +18,12 @@ namespace NadekoBot.Modules.Administration
         [Group]
         public class SelfAssignedRolesCommands
         {
+            private ILocalization _l;
+
+            public SelfAssignedRolesCommands()
+            {
+                _l = NadekoBot.Localizer;
+            }
 
             [LocalizedCommand, LocalizedDescription, LocalizedSummary, LocalizedAlias]
             [RequireContext(ContextType.Guild)]
@@ -34,7 +40,7 @@ namespace NadekoBot.Modules.Administration
                     roles = uow.SelfAssignedRoles.GetFromGuild(channel.Guild.Id);
                     if (roles.Any(s => s.RoleId == role.Id && s.GuildId == role.GuildId))
                     {
-                        msg = $":anger:Role **{role.Name}** is already in the list.";
+                        msg = string.Format(_l["administration_asar_error_already_list", channel.Guild.Id], role.Name);
                     }
                     else
                     {
@@ -43,10 +49,10 @@ namespace NadekoBot.Modules.Administration
                             GuildId = role.GuildId
                         });
                         await uow.CompleteAsync();
-                        msg = $":ok:Role **{role.Name}** added to the list.";
+                        msg = string.Format(_l["administration_asar_success", channel.Guild.Id], role.Name);
                     }
                 }
-                await channel.SendMessageAsync(msg.ToString()).ConfigureAwait(false);
+                await channel.SendMessageAsync(msg).ConfigureAwait(false);
             }
 
             [LocalizedCommand, LocalizedDescription, LocalizedSummary, LocalizedAlias]
@@ -64,10 +70,10 @@ namespace NadekoBot.Modules.Administration
                 }
                 if (!success)
                 {
-                    await channel.SendMessageAsync(":anger:That role is not self-assignable.").ConfigureAwait(false);
+                    await channel.SendMessageAsync(_l["administration_rsar_error_not_assignable", channel.Guild.Id]).ConfigureAwait(false);
                     return;
                 }
-                await channel.SendMessageAsync($":ok:**{role.Name}** has been removed from the list of self-assignable roles").ConfigureAwait(false);
+                await channel.SendMessageAsync(string.Format(_l["administration_rsar_success", channel.Guild.Id], role.Name)).ConfigureAwait(false);
             }
 
             [LocalizedCommand, LocalizedDescription, LocalizedSummary, LocalizedAlias]
@@ -82,7 +88,7 @@ namespace NadekoBot.Modules.Administration
                 using (var uow = DbHandler.UnitOfWork())
                 {
                     var roleModels = uow.SelfAssignedRoles.GetFromGuild(channel.Guild.Id);
-                    msg.AppendLine($"There are `{roleModels.Count()}` self assignable roles:");
+                    msg.AppendLine(string.Format(_l["administration_lsar_number", channel.Guild.Id], roleModels.Count()));
                     
                     foreach (var roleModel in roleModels)
                     {
@@ -98,7 +104,7 @@ namespace NadekoBot.Modules.Administration
                     }
                     foreach (var role in toRemove)
                     {
-                        removeMsg.AppendLine($"`{role.RoleId} not found. Cleaned up.`");
+                        removeMsg.AppendLine(string.Format(_l["administration_lsar_cleanup", channel.Guild.Id], role.Id));
                     }
                     await uow.CompleteAsync();
                 }
@@ -120,8 +126,8 @@ namespace NadekoBot.Modules.Administration
                     areExclusive = config.ExclusiveSelfAssignedRoles = !config.ExclusiveSelfAssignedRoles;
                     await uow.CompleteAsync();
                 }
-                string exl = areExclusive ? "exclusive." : "not exclusive.";
-                await channel.SendMessageAsync("Self assigned roles are now " + exl);
+                await channel.SendMessageAsync(areExclusive ? _l["administration_tesar_exclusive", channel.Guild.Id] :
+                    _l["administration_tesar_not_exclusive", channel.Guild.Id]);
             }
 
             [LocalizedCommand, LocalizedDescription, LocalizedSummary, LocalizedAlias]
@@ -142,12 +148,12 @@ namespace NadekoBot.Modules.Administration
                 SelfAssignedRole roleModel;
                 if ((roleModel = roles.FirstOrDefault(r=>r.RoleId == role.Id)) == null)
                 {
-                    await channel.SendMessageAsync(":anger:That role is not self-assignable.").ConfigureAwait(false);
+                    await channel.SendMessageAsync(_l["administration_iam_not_assignable", channel.Guild.Id]).ConfigureAwait(false);
                     return;
                 }
                 if (guildUser.Roles.Contains(role))
                 {
-                    await channel.SendMessageAsync($":anger:You already have {role.Name} role.").ConfigureAwait(false);
+                    await channel.SendMessageAsync(string.Format(_l["administration_iam_already_have_role", channel.Guild.Id], role.Name)).ConfigureAwait(false);
                     return;
                 }
 
@@ -156,9 +162,10 @@ namespace NadekoBot.Modules.Administration
                     var sameRoles = guildUser.Roles.Where(r => roles.Any(rm => rm.RoleId == r.Id));
                     if (sameRoles.Any())
                     {
-                        await channel.SendMessageAsync($":anger:You already have {sameRoles.FirstOrDefault().Name} exclusive self-assigned role.").ConfigureAwait(false);
+                        await channel.SendMessageAsync(string.Format(_l["administration_iam_have_exclusive", channel.Guild.Id], sameRoles.FirstOrDefault().Name)).ConfigureAwait(false);
                         return;
                     }
+                    
                 }
                 try
                 {
@@ -166,10 +173,10 @@ namespace NadekoBot.Modules.Administration
                 }
                 catch (Exception)
                 {
-                    await channel.SendMessageAsync($":anger:`I am unable to add that role to you. I can't add roles to owners or other roles higher than my role in the role hierarchy.`").ConfigureAwait(false);
+                    await channel.SendMessageAsync(_l["administration_iam_insufficient_permission", channel.Guild.Id]).ConfigureAwait(false);
                     return;
                 }
-                var msg = await channel.SendMessageAsync($":ok:You now have {role.Name} role.").ConfigureAwait(false);
+                var msg = await channel.SendMessageAsync(string.Format(_l["administration_iam_success", channel.Guild.Id], role.Name)).ConfigureAwait(false);
 
                 if (conf.AutoDeleteSelfAssignedRoleMessages)
                 {
@@ -199,12 +206,12 @@ namespace NadekoBot.Modules.Administration
                 SelfAssignedRole roleModel;
                 if ((roleModel = roles.FirstOrDefault(r => r.RoleId == role.Id)) == null)
                 {
-                    await channel.SendMessageAsync(":anger:That role is not self-assignable.").ConfigureAwait(false);
+                    await channel.SendMessageAsync(_l["administration_iamnot_not_assignable", channel.Guild.Id]).ConfigureAwait(false);
                     return;
                 }
                 if (!guildUser.Roles.Contains(role))
                 {
-                    await channel.SendMessageAsync($":anger:You don't have {role.Name} role.").ConfigureAwait(false);
+                    await channel.SendMessageAsync(string.Format(_l["administration_iamnot_have_not_role", channel.Guild.Id], role.Name)).ConfigureAwait(false);
                     return;
                 }
                 try
@@ -213,10 +220,10 @@ namespace NadekoBot.Modules.Administration
                 }
                 catch (Exception)
                 {
-                    await channel.SendMessageAsync($":anger:`I am unable to add that role to you. I can't remove roles to owners or other roles higher than my role in the role hierarchy.`").ConfigureAwait(false);
+                    await channel.SendMessageAsync(_l["administration_iamnot_insufficient_permission", channel.Guild.Id]).ConfigureAwait(false);
                     return;
                 }
-                var msg = await channel.SendMessageAsync($":ok: You no longer have {role.Name} role.").ConfigureAwait(false);
+                var msg = await channel.SendMessageAsync(string.Format(_l["administration_iamnot_success", channel.Guild.Id], role.Name)).ConfigureAwait(false);
 
                 if (conf.AutoDeleteSelfAssignedRoleMessages)
                 {

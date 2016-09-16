@@ -9,6 +9,7 @@ using NLog.Config;
 using NLog.Targets;
 using System;
 using System.Diagnostics;
+using System.Globalization;
 using System.Linq;
 using System.Reflection;
 using System.Threading.Tasks;

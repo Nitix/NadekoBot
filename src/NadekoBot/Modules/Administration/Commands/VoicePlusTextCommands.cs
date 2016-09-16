@@ -20,8 +20,11 @@ namespace NadekoBot.Modules.Administration
             Regex channelNameRegex = new Regex(@"[^a-zA-Z0-9 -]", RegexOptions.Compiled);
             //guildid/voiceplustextenabled
             private ConcurrentDictionary<ulong, bool> voicePlusTextCache;
+            private ILocalization _l;
+
             public VoicePlusTextCommands()
             {
+                _l = NadekoBot.Localizer;
                 NadekoBot.Client.UserUpdated += UserUpdatedEventHandler;
                 voicePlusTextCache = new ConcurrentDictionary<ulong, bool>();
             }
@@ -45,9 +48,7 @@ namespace NadekoBot.Modules.Administration
                         {
                             try
                             {
-                                await (await guild.GetOwnerAsync()).SendMessageAsync(
-                                    "I don't have manage server and/or Manage Channels permission," +
-                                    $" so I cannot run voice+text on **{guild.Name}** server.").ConfigureAwait(false);
+                                await (await guild.GetOwnerAsync()).SendMessageAsync(string.Format(_l["administration_voicetext_error_insufficient_permision", guild.Id], guild.Name)).ConfigureAwait(false);
                             }
                             catch { }
                             using (var uow = DbHandler.UnitOfWork())
@@ -109,7 +110,7 @@ namespace NadekoBot.Modules.Administration
                 var botUser = guild.GetCurrentUser();
                 if (!botUser.GuildPermissions.ManageRoles || !botUser.GuildPermissions.ManageChannels)
                 {
-                    await channel.SendMessageAsync(":anger: `I require manage roles and manage channels permissions to enable this feature.`");
+                    await channel.SendMessageAsync(_l["administration_voiceplustext_error_permission_activation", channel.Guild.Id]);
                     return;
                 }
                 try
@@ -127,10 +128,10 @@ namespace NadekoBot.Modules.Administration
                         {
                             try { await textChannel.DeleteAsync().ConfigureAwait(false); } catch { }
                         }
-                        await channel.SendMessageAsync("Successfuly removed voice + text feature.").ConfigureAwait(false);
+                        await channel.SendMessageAsync(_l["administration_voiceplustext_disabled", channel.Guild.Id]).ConfigureAwait(false);
                         return;
                     }
-                    await channel.SendMessageAsync("Successfuly enabled voice + text feature.").ConfigureAwait(false);
+                    await channel.SendMessageAsync(_l["administration_voiceplustext_enabled", channel.Guild.Id]).ConfigureAwait(false);
 
                 }
                 catch (Exception ex)
@@ -148,7 +149,7 @@ namespace NadekoBot.Modules.Administration
                 var guild = channel.Guild;
                 if (!guild.GetCurrentUser().GuildPermissions.ManageChannels)
                 {
-                    await channel.SendMessageAsync("`I have insufficient permission to do that.`");
+                    await channel.SendMessageAsync(_l["administration_voiceplustext_error_permission_clean", channel.Guild.Id]);
                     return;
                 }
 
@@ -163,7 +164,7 @@ namespace NadekoBot.Modules.Administration
                     await Task.Delay(500);
                 }
 
-                await channel.SendMessageAsync("`Done.`");
+                await channel.SendMessageAsync(_l["administration_voiceplustext_done", channel.Guild.Id]);
             }
         }
     }

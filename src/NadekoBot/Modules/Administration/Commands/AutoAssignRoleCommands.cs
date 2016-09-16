@@ -16,8 +16,11 @@ namespace NadekoBot.Modules.Administration
         [Group]
         public class AutoAssignRoleCommands
         {
+            private ILocalization _l;
+
             public AutoAssignRoleCommands()
             {
+                _l = NadekoBot.Localizer;
                 var _client = NadekoBot.Client;
                 _client.UserJoined += (user) =>
                 {
@@ -64,11 +67,11 @@ namespace NadekoBot.Modules.Administration
 
                 if (role == null)
                 {
-                    await channel.SendMessageAsync("`Auto assign role on user join is now disabled.`").ConfigureAwait(false);
+                    await channel.SendMessageAsync(_l["administration_autoassignrole_disabled", channel.Guild.Id]).ConfigureAwait(false);
                     return;
                 }
 
-                await channel.SendMessageAsync("`Auto assigned role is set.`").ConfigureAwait(false);
+                await channel.SendMessageAsync(_l["administration_autoassignrole_success", channel.Guild.Id]).ConfigureAwait(false);
             }
         }
     }

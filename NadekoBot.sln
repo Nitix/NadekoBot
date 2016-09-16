@@ -41,4 +41,11 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{45EC1473-C678-4857-A544-07DFE0D0B478} = {04929013-5BAB-42B0-B9B2-8F2BB8F16AF2}
 	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		MoveToResources = {"Items":[{"Extensions":".cs,.vb","Patterns":"$Namespace.$File.$Key|$File.$Key|StringResourceKey.$Key|$Namespace.StringResourceKey.$Key"},{"Extensions":".cshtml,.vbhtml","Patterns":"@$Namespace.$File.$Key|@$File.$Key|@StringResourceKey.$Key|@$Namespace.StringResourceKey.$Key"},{"Extensions":".cpp,.c,.hxx,.h","Patterns":"$File::$Key"},{"Extensions":".aspx,.ascx","Patterns":"<%$ Resources:$File,$Key %>"},{"Extensions":".xaml","Patterns":"\"{x:Static properties:$File.$Key}\""},{"Extensions":".cs","Patterns":"NadekoBot.Resources.ResponseStrings.$Key"}]}
+		PersistCodeReferences = {"Items":[{"Expression":"\\W($File.$Key)\\W","Extensions":".cs,.xaml,.cshtml","IsCaseSensitive":true,"SingleLineComment":"\/\/"},{"Expression":"ResourceManager.GetString\\(\"($Key)\"\\)","Extensions":".cs","IsCaseSensitive":true,"SingleLineComment":"\/\/"},{"Expression":"typeof\\((\\w+\\.)*($File)\\).+\"($Key)\"|\"($Key)\".+typeof\\((\\w+\\.)*($File)\\)","Extensions":".cs","IsCaseSensitive":true,"SingleLineComment":"\/\/"},{"Expression":"\\W($Key)\\W","Extensions":".vb","IsCaseSensitive":false,"SingleLineComment":"'"},{"Expression":"\\W($File::$Key)\\W","Extensions":".cpp,.c,.hxx,.h","IsCaseSensitive":true,"SingleLineComment":"\/\/"},{"Expression":"<%\\$\\s+Resources:\\s*($File)\\s*,\\s*($Key)\\s*%>","Extensions":".aspx,.ascx","IsCaseSensitive":true,"SingleLineComment":null},{"Expression":"StringResourceKey\\.($Key)","Extensions":".cs","IsCaseSensitive":true,"SingleLineComment":"\/\/"},{"Expression":"_l\\[\"($Key)\",","Extensions":".cs","IsCaseSensitive":true,"SingleLineComment":"\/\/"}]}
+		AutoCreateNewLanguageFiles = True
+		ConfirmAddLanguageFile = False
+		ExcelExportMode = SingleSheet
+	EndGlobalSection
 EndGlobal

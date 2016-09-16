@@ -7,6 +7,7 @@ using System;
 using System.Collections.Concurrent;
 using System.Threading;
 using System.Threading.Tasks;
+using NadekoBot.Services;
 
 namespace NadekoBot.Modules.Administration
 {
@@ -16,6 +17,7 @@ namespace NadekoBot.Modules.Administration
         public class RatelimitCommand
         {
             public static ConcurrentDictionary<ulong, Ratelimiter> RatelimitingChannels = new ConcurrentDictionary<ulong, Ratelimiter>();
+            private ILocalization _l;
 
             private DiscordSocketClient _client { get; }
 
@@ -62,6 +64,7 @@ namespace NadekoBot.Modules.Administration
 
             public RatelimitCommand()
             {
+                _l = NadekoBot.Localizer;
                 this._client = NadekoBot.Client;
 
                _client.MessageReceived += (umsg) =>
@@ -94,13 +97,13 @@ namespace NadekoBot.Modules.Administration
                 if (RatelimitingChannels.TryRemove(channel.Id, out throwaway))
                 {
                     throwaway.cancelSource.Cancel();
-                    await channel.SendMessageAsync("`Slow mode disabled.`").ConfigureAwait(false);
+                    await channel.SendMessageAsync(_l["administration_slowmode_disabled", channel.Guild.Id]).ConfigureAwait(false);
                     return;
                 }
 
                 if (msg < 1 || perSec < 1)
                 {
-                    await channel.SendMessageAsync("`Invalid parameters.`");
+                    await channel.SendMessageAsync(_l["global_params_error", channel.Guild.Id]);
                     return;
                 }
 
@@ -110,8 +113,7 @@ namespace NadekoBot.Modules.Administration
                     PerSeconds = perSec,
                 }))
                 {
-                    await channel.SendMessageAsync("`Slow mode initiated.` " +
-                                                $"Users can't send more than {throwaway.MaxMessages} message(s) every {throwaway.PerSeconds} second(s).")
+                    await channel.SendMessageAsync(string.Format(_l["administration_slowmode_initied", channel.Guild.Id], throwaway.MaxMessages, throwaway.PerSeconds))
                                                 .ConfigureAwait(false);
                 }
             }

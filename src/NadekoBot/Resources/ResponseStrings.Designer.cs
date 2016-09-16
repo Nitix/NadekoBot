@@ -28,7 +28,7 @@ namespace NadekoBot.Resources {
         
         private static global::System.Globalization.CultureInfo resourceCulture;
         
-        public ResponseStrings() {
+        internal ResponseStrings() {
         }
         
         /// <summary>
@@ -56,6 +56,996 @@ namespace NadekoBot.Resources {
             }
             set {
                 resourceCulture = value;
+            }
+        }
+        
+        /// <summary>
+        ///    Looks up a localized string similar to `Added.`.
+        /// </summary>
+        public static string administration_addplaying_success {
+            get {
+                return ResourceManager.GetString("administration_addplaying_success", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///    Looks up a localized string similar to Error AD-ASAR-01: :anger:Role **{0}** is already in the list..
+        /// </summary>
+        public static string administration_asar_error_already_list {
+            get {
+                return ResourceManager.GetString("administration_asar_error_already_list", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///    Looks up a localized string similar to :ok:Role **{0}** added to the list.&quot;.
+        /// </summary>
+        public static string administration_asar_success {
+            get {
+                return ResourceManager.GetString("administration_asar_success", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///    Looks up a localized string similar to `Auto assign role on user join is now disabled.`.
+        /// </summary>
+        public static string administration_autoassignrole_disabled {
+            get {
+                return ResourceManager.GetString("administration_autoassignrole_disabled", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///    Looks up a localized string similar to `Auto assigned role is set.`.
+        /// </summary>
+        public static string administration_autoassignrole_success {
+            get {
+                return ResourceManager.GetString("administration_autoassignrole_success", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///    Looks up a localized string similar to Error AD-BAN-01: Most likely I don&apos;t have sufficient permissions..
+        /// </summary>
+        public static string administration_ban_error {
+            get {
+                return ResourceManager.GetString("administration_ban_error", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///    Looks up a localized string similar to **You have been BANNED from `{0}` guild.**\nReason: {0}.
+        /// </summary>
+        public static string administration_ban_private_message {
+            get {
+                return ResourceManager.GetString("administration_ban_private_message", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///    Looks up a localized string similar to Banned user {0} Id: {1}.
+        /// </summary>
+        public static string administration_ban_success {
+            get {
+                return ResourceManager.GetString("administration_ban_success", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///    Looks up a localized string similar to Bye announcements disabled..
+        /// </summary>
+        public static string administration_bye_disabled {
+            get {
+                return ResourceManager.GetString("administration_bye_disabled", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///    Looks up a localized string similar to Bye announcements enabled on this channel..
+        /// </summary>
+        public static string administration_bye_enabled {
+            get {
+                return ResourceManager.GetString("administration_bye_enabled", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///    Looks up a localized string similar to `Automatic deletion of bye messages has been disabled.`.
+        /// </summary>
+        public static string administration_byedel_disabled {
+            get {
+                return ResourceManager.GetString("administration_byedel_disabled", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///    Looks up a localized string similar to `Automatic deletion of bye messages has been enabled.`.
+        /// </summary>
+        public static string administration_byedel_enabled {
+            get {
+                return ResourceManager.GetString("administration_byedel_enabled", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///    Looks up a localized string similar to Enable bye messsages by typing `.bye`.
+        /// </summary>
+        public static string administration_byemsg_advanced_activation {
+            get {
+                return ResourceManager.GetString("administration_byemsg_advanced_activation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///    Looks up a localized string similar to `Current bye message:` {0}.
+        /// </summary>
+        public static string administration_byemsg_message_current_msg {
+            get {
+                return ResourceManager.GetString("administration_byemsg_message_current_msg", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///    Looks up a localized string similar to New bye message set..
+        /// </summary>
+        public static string administration_byemsg_message_set {
+            get {
+                return ResourceManager.GetString("administration_byemsg_message_set", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///    Looks up a localized string similar to Error AD-CR-01: Unspecified error..
+        /// </summary>
+        public static string administration_createrole_error {
+            get {
+                return ResourceManager.GetString("administration_createrole_error", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///    Looks up a localized string similar to Successfully created role **{0}**.
+        /// </summary>
+        public static string administration_createrole_success {
+            get {
+                return ResourceManager.GetString("administration_createrole_success", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///    Looks up a localized string similar to Created voice channel **{0}**, id `{1}`..
+        /// </summary>
+        public static string administration_creatvoichanl_success {
+            get {
+                return ResourceManager.GetString("administration_creatvoichanl_success", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///    Looks up a localized string similar to Created text channel **{0}**, id `{1}`..
+        /// </summary>
+        public static string administration_creatxtchanl_success {
+            get {
+                return ResourceManager.GetString("administration_creatxtchanl_success", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///    Looks up a localized string similar to Error AD-DEAF-01 : I most likely don&apos;t have the permission necessary for that..
+        /// </summary>
+        public static string administration_deafen_error {
+            get {
+                return ResourceManager.GetString("administration_deafen_error", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///    Looks up a localized string similar to Nobody got deafened..
+        /// </summary>
+        public static string administration_deafen_nobody {
+            get {
+                return ResourceManager.GetString("administration_deafen_nobody", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///    Looks up a localized string similar to Deafen successful..
+        /// </summary>
+        public static string administration_deafen_success {
+            get {
+                return ResourceManager.GetString("administration_deafen_success", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///    Looks up a localized string similar to ❗`Now automatically deleting successfull command invokations.`.
+        /// </summary>
+        public static string administration_delmsgoncmd_now_deleting {
+            get {
+                return ResourceManager.GetString("administration_delmsgoncmd_now_deleting", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///    Looks up a localized string similar to ❗`Stopped automatic deletion of successfull command invokations.`.
+        /// </summary>
+        public static string administration_delmsgoncmd_stopped_deletion {
+            get {
+                return ResourceManager.GetString("administration_delmsgoncmd_stopped_deletion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///    Looks up a localized string similar to Removed text channel **{0}**, id `{1}`..
+        /// </summary>
+        public static string administration_deltxtchanl_success {
+            get {
+                return ResourceManager.GetString("administration_deltxtchanl_success", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///    Looks up a localized string similar to Removed channel **{0}**..
+        /// </summary>
+        public static string administration_delvoichanl_success {
+            get {
+                return ResourceManager.GetString("administration_delvoichanl_success", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///    Looks up a localized string similar to Successfuly added a new donator. Total donated amount from this user: {0} 👑.
+        /// </summary>
+        public static string administration_donadd_success {
+            get {
+                return ResourceManager.GetString("administration_donadd_success", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///    Looks up a localized string similar to **Thanks to the people listed below for making this project happen!**\n.
+        /// </summary>
+        public static string administration_donators_list {
+            get {
+                return ResourceManager.GetString("administration_donators_list", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///    Looks up a localized string similar to Greet announcements disabled..
+        /// </summary>
+        public static string administration_greet_disabled {
+            get {
+                return ResourceManager.GetString("administration_greet_disabled", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///    Looks up a localized string similar to Greet announcements enabled on this channel..
+        /// </summary>
+        public static string administration_greet_enabled {
+            get {
+                return ResourceManager.GetString("administration_greet_enabled", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///    Looks up a localized string similar to `Automatic deletion of greet messages has been disabled.`.
+        /// </summary>
+        public static string administration_greetdel_disabled {
+            get {
+                return ResourceManager.GetString("administration_greetdel_disabled", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///    Looks up a localized string similar to `Automatic deletion of greet messages has been enabled.`.
+        /// </summary>
+        public static string administration_greetdel_enabled {
+            get {
+                return ResourceManager.GetString("administration_greetdel_enabled", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///    Looks up a localized string similar to Greet announcements disabled..
+        /// </summary>
+        public static string administration_greetdm_disabled {
+            get {
+                return ResourceManager.GetString("administration_greetdm_disabled", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///    Looks up a localized string similar to Greet announcements enabled on this channel..
+        /// </summary>
+        public static string administration_greetdm_enabled {
+            get {
+                return ResourceManager.GetString("administration_greetdm_enabled", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///    Looks up a localized string similar to Enable DM greet messsages by typing `.greetdm`.
+        /// </summary>
+        public static string administration_greetdmmsg_advanced_activation {
+            get {
+                return ResourceManager.GetString("administration_greetdmmsg_advanced_activation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///    Looks up a localized string similar to `Current DM greet message:` {0}.
+        /// </summary>
+        public static string administration_greetdmmsg_current_msg {
+            get {
+                return ResourceManager.GetString("administration_greetdmmsg_current_msg", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///    Looks up a localized string similar to New DM greet message set..
+        /// </summary>
+        public static string administration_greetdmmsg_message_set {
+            get {
+                return ResourceManager.GetString("administration_greetdmmsg_message_set", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///    Looks up a localized string similar to Enable greet messsages by typing `.greet`.
+        /// </summary>
+        public static string administration_greetmsg_advanced_activation {
+            get {
+                return ResourceManager.GetString("administration_greetmsg_advanced_activation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///    Looks up a localized string similar to `Current greet message:` {0}.
+        /// </summary>
+        public static string administration_greetmsg_current_message {
+            get {
+                return ResourceManager.GetString("administration_greetmsg_current_message", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///    Looks up a localized string similar to New greet message set..
+        /// </summary>
+        public static string administration_greetmsg_message_set {
+            get {
+                return ResourceManager.GetString("administration_greetmsg_message_set", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///    Looks up a localized string similar to :anger:You already have {0} role..
+        /// </summary>
+        public static string administration_iam_already_have_role {
+            get {
+                return ResourceManager.GetString("administration_iam_already_have_role", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///    Looks up a localized string similar to Error AD-IAM-02: :anger:You already have {0} exclusive self-assigned role..
+        /// </summary>
+        public static string administration_iam_have_exclusive {
+            get {
+                return ResourceManager.GetString("administration_iam_have_exclusive", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///    Looks up a localized string similar to Error AD-IAM-03: :anger:`I am unable to add that role to you. I can&apos;t add roles to owners or other roles higher than my role in the role hierarchy.`.
+        /// </summary>
+        public static string administration_iam_insufficient_permission {
+            get {
+                return ResourceManager.GetString("administration_iam_insufficient_permission", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///    Looks up a localized string similar to Error AD-IAM-01: :anger:That role is not self-assignable..
+        /// </summary>
+        public static string administration_iam_not_assignable {
+            get {
+                return ResourceManager.GetString("administration_iam_not_assignable", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///    Looks up a localized string similar to :ok:You now have {0} role..
+        /// </summary>
+        public static string administration_iam_success {
+            get {
+                return ResourceManager.GetString("administration_iam_success", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///    Looks up a localized string similar to Error AD-IAM-02: :anger:You don&apos;t have {0} role..
+        /// </summary>
+        public static string administration_iamnot_have_not_role {
+            get {
+                return ResourceManager.GetString("administration_iamnot_have_not_role", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///    Looks up a localized string similar to Error AD-IAMN-03: :anger:`I am unable to add that role to you. I can&apos;t remove roles to owners or other roles higher than my role in the role hierarchy.`.
+        /// </summary>
+        public static string administration_iamnot_insufficient_permission {
+            get {
+                return ResourceManager.GetString("administration_iamnot_insufficient_permission", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///    Looks up a localized string similar to Error AD-IAM-01: :anger:That role is not self-assignable..
+        /// </summary>
+        public static string administration_iamnot_not_assignable {
+            get {
+                return ResourceManager.GetString("administration_iamnot_not_assignable", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///    Looks up a localized string similar to :ok: You no longer have {0} role..
+        /// </summary>
+        public static string administration_iamnot_success {
+            get {
+                return ResourceManager.GetString("administration_iamnot_success", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///    Looks up a localized string similar to Error AD-KICK-02: Most likely I don&apos;t have sufficient permissions..
+        /// </summary>
+        public static string administration_kick_error {
+            get {
+                return ResourceManager.GetString("administration_kick_error", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///    Looks up a localized string similar to Error AD_KICK-01 : User not found..
+        /// </summary>
+        public static string administration_kick_error_user_not_found {
+            get {
+                return ResourceManager.GetString("administration_kick_error_user_not_found", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///    Looks up a localized string similar to **You have been KICKED from `{0}` server.**\nReason: {1}.
+        /// </summary>
+        public static string administration_kick_private_message {
+            get {
+                return ResourceManager.GetString("administration_kick_private_message", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///    Looks up a localized string similar to Kicked user {0} Id: {1}.
+        /// </summary>
+        public static string administration_kick_success {
+            get {
+                return ResourceManager.GetString("administration_kick_success", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///    Looks up a localized string similar to Language for this guild has been changed..
+        /// </summary>
+        public static string administration_language_set_done {
+            get {
+                return ResourceManager.GetString("administration_language_set_done", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///    Looks up a localized string similar to Can&apos;t change the language, please check the language code (ISO 3166 or BCP-47)..
+        /// </summary>
+        public static string administration_language_set_error {
+            get {
+                return ResourceManager.GetString("administration_language_set_error", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///    Looks up a localized string similar to Set the language of Nadeko response. `.setlanguage language code`. The language code is either ISO 3166 or BCP-47..
+        /// </summary>
+        public static string administration_language_set_help {
+            get {
+                return ResourceManager.GetString("administration_language_set_help", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///    Looks up a localized string similar to {0} `Here is a list of rotating statuses:`.
+        /// </summary>
+        public static string administration_listplaying_header {
+            get {
+                return ResourceManager.GetString("administration_listplaying_header", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///    Looks up a localized string similar to `No rotating playing statuses set.`.
+        /// </summary>
+        public static string administration_listplaying_nothing {
+            get {
+                return ResourceManager.GetString("administration_listplaying_nothing", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///    Looks up a localized string similar to `{0} not found. Cleaned up.`.
+        /// </summary>
+        public static string administration_lsar_cleanup {
+            get {
+                return ResourceManager.GetString("administration_lsar_cleanup", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///    Looks up a localized string similar to There are `{0}` self assignable roles:.
+        /// </summary>
+        public static string administration_lsar_number {
+            get {
+                return ResourceManager.GetString("administration_lsar_number", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///    Looks up a localized string similar to --{0} has invoked a mention on the following roles--\n.
+        /// </summary>
+        public static string administration_mentionrole_invokation {
+            get {
+                return ResourceManager.GetString("administration_mentionrole_invokation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///    Looks up a localized string similar to Error AD-MUTE-01 : I most likely don&apos;t have the permission necessary for that..
+        /// </summary>
+        public static string administration_mute_error {
+            get {
+                return ResourceManager.GetString("administration_mute_error", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///    Looks up a localized string similar to Nobody got muted..
+        /// </summary>
+        public static string administration_mute_nobody {
+            get {
+                return ResourceManager.GetString("administration_mute_nobody", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///    Looks up a localized string similar to Mute successful..
+        /// </summary>
+        public static string administration_mute_success {
+            get {
+                return ResourceManager.GetString("administration_mute_success", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///    Looks up a localized string similar to :ok: **Prune done, this message will also be deleted**.
+        /// </summary>
+        public static string administration_prune_success {
+            get {
+                return ResourceManager.GetString("administration_prune_success", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///    Looks up a localized string similar to Error AD-RAR-01: Failed to remove roles. Most likely reason: Insufficient permissions..
+        /// </summary>
+        public static string administration_removeallroles_error {
+            get {
+                return ResourceManager.GetString("administration_removeallroles_error", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///    Looks up a localized string similar to Successfully removed **all** roles from user **{0}**.
+        /// </summary>
+        public static string administration_removeallroles_success {
+            get {
+                return ResourceManager.GetString("administration_removeallroles_success", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///    Looks up a localized string similar to `Removed the the playing message:` {0}.
+        /// </summary>
+        public static string administration_removeplaying_success {
+            get {
+                return ResourceManager.GetString("administration_removeplaying_success", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///    Looks up a localized string similar to Error AD-RR-01: Failed to remove role. Bot has insufficient permissions..
+        /// </summary>
+        public static string administration_removerole_error_bot_permission {
+            get {
+                return ResourceManager.GetString("administration_removerole_error_bot_permission", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///    Looks up a localized string similar to Successfully aremoved role **{0}** from user **{1}**.
+        /// </summary>
+        public static string administration_removerole_success {
+            get {
+                return ResourceManager.GetString("administration_removerole_success", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///    Looks up a localized string similar to Error AD-RENR-01: Failed to rename role. Probably insufficient permissions..
+        /// </summary>
+        public static string administration_renamerole_error {
+            get {
+                return ResourceManager.GetString("administration_renamerole_error", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///    Looks up a localized string similar to You can&apos;t edit roles higher than your highest role..
+        /// </summary>
+        public static string administration_renamerole_error_higher {
+            get {
+                return ResourceManager.GetString("administration_renamerole_error_higher", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///    Looks up a localized string similar to Role renamed..
+        /// </summary>
+        public static string administration_renamerole_success {
+            get {
+                return ResourceManager.GetString("administration_renamerole_success", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///    Looks up a localized string similar to `No message is repeating.`.
+        /// </summary>
+        public static string administration_repeat_no_message {
+            get {
+                return ResourceManager.GetString("administration_repeat_no_message", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///    Looks up a localized string similar to Repeating &quot;{0}&quot; every {1} minutes.
+        /// </summary>
+        public static string administration_repeat_set {
+            get {
+                return ResourceManager.GetString("administration_repeat_set", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///    Looks up a localized string similar to `Stopped repeating a message.`.
+        /// </summary>
+        public static string administration_repeat_stopped {
+            get {
+                return ResourceManager.GetString("administration_repeat_stopped", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///    Looks up a localized string similar to `No repeating message found on this server.`.
+        /// </summary>
+        public static string administration_repeatinvoke_error {
+            get {
+                return ResourceManager.GetString("administration_repeatinvoke_error", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///    Looks up a localized string similar to Error AD-RC-02: Error occured, most likely invalid parameters or insufficient permissions..
+        /// </summary>
+        public static string administration_rolecolor_error {
+            get {
+                return ResourceManager.GetString("administration_rolecolor_error", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///    Looks up a localized string similar to Error AD-RC-01: That role does not exist..
+        /// </summary>
+        public static string administration_rolecolor_not_existant {
+            get {
+                return ResourceManager.GetString("administration_rolecolor_not_existant", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///    Looks up a localized string similar to Role {0}&apos;s color has been changed..
+        /// </summary>
+        public static string administration_rolecolor_success {
+            get {
+                return ResourceManager.GetString("administration_rolecolor_success", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///    Looks up a localized string similar to `Rotating playing status disabled.`.
+        /// </summary>
+        public static string administration_rotateplaying_disabled {
+            get {
+                return ResourceManager.GetString("administration_rotateplaying_disabled", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///    Looks up a localized string similar to `Rotating playing status enabled.`.
+        /// </summary>
+        public static string administration_rotateplaying_enabled {
+            get {
+                return ResourceManager.GetString("administration_rotateplaying_enabled", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///    Looks up a localized string similar to Error AD-RSAR-01: :anger:That role is not self-assignable..
+        /// </summary>
+        public static string administration_rsar_error_not_assignable {
+            get {
+                return ResourceManager.GetString("administration_rsar_error_not_assignable", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///    Looks up a localized string similar to :ok:**{0}** has been removed from the list of self-assignable roles.
+        /// </summary>
+        public static string administration_rsar_success {
+            get {
+                return ResourceManager.GetString("administration_rsar_success", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///    Looks up a localized string similar to :ok: **New channel name set.**.
+        /// </summary>
+        public static string administration_setchanlname_success {
+            get {
+                return ResourceManager.GetString("administration_setchanlname_success", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///    Looks up a localized string similar to Error AD-SR-01: Failed to add role. Bot has insufficient permissions..
+        /// </summary>
+        public static string administration_setrole_error_bot_permission {
+            get {
+                return ResourceManager.GetString("administration_setrole_error_bot_permission", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///    Looks up a localized string similar to Successfully added role **{0}** to user **{1}**.
+        /// </summary>
+        public static string administration_setrole_success {
+            get {
+                return ResourceManager.GetString("administration_setrole_success", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///    Looks up a localized string similar to :ok: **New channel topic set.**&quot;.
+        /// </summary>
+        public static string administration_settopic_success {
+            get {
+                return ResourceManager.GetString("administration_settopic_success", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///    Looks up a localized string similar to `Slow mode disabled.`.
+        /// </summary>
+        public static string administration_slowmode_disabled {
+            get {
+                return ResourceManager.GetString("administration_slowmode_disabled", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///    Looks up a localized string similar to `Slow mode initiated.` Users can&apos;t send more than {0} message(s) every {1} second(s)..
+        /// </summary>
+        public static string administration_slowmode_initied {
+            get {
+                return ResourceManager.GetString("administration_slowmode_initied", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///    Looks up a localized string similar to Error AD-SBAN-01: Most likely I don&apos;t have sufficient permissions..
+        /// </summary>
+        public static string administration_softban_error {
+            get {
+                return ResourceManager.GetString("administration_softban_error", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///    Looks up a localized string similar to **You have been SOFT-BANNED from `{0}` guild.**\nReason: {1}.
+        /// </summary>
+        public static string administration_softban_private_message {
+            get {
+                return ResourceManager.GetString("administration_softban_private_message", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///    Looks up a localized string similar to Soft-Banned user {0} Id: {1}.
+        /// </summary>
+        public static string administration_softban_success {
+            get {
+                return ResourceManager.GetString("administration_softban_success", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///    Looks up a localized string similar to Self assigned roles are now exclusive..
+        /// </summary>
+        public static string administration_tesar_exclusive {
+            get {
+                return ResourceManager.GetString("administration_tesar_exclusive", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///    Looks up a localized string similar to Self assigned roles are now not exclusive..
+        /// </summary>
+        public static string administration_tesar_not_exclusive {
+            get {
+                return ResourceManager.GetString("administration_tesar_not_exclusive", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///    Looks up a localized string similar to Error AD-UNDEAF-01 : I most likely don&apos;t have the permission necessary for that..
+        /// </summary>
+        public static string administration_undeafen_error {
+            get {
+                return ResourceManager.GetString("administration_undeafen_error", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///    Looks up a localized string similar to Nobody got undeafened..
+        /// </summary>
+        public static string administration_undeafen_nobody {
+            get {
+                return ResourceManager.GetString("administration_undeafen_nobody", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///    Looks up a localized string similar to Deafen successful..
+        /// </summary>
+        public static string administration_undeafen_success {
+            get {
+                return ResourceManager.GetString("administration_undeafen_success", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///    Looks up a localized string similar to Error AD-UNMUTE-01 : I most likely don&apos;t have the permission necessary for that..
+        /// </summary>
+        public static string administration_unmute_error {
+            get {
+                return ResourceManager.GetString("administration_unmute_error", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///    Looks up a localized string similar to Nobody got unmuted..
+        /// </summary>
+        public static string administration_unmute_nobody {
+            get {
+                return ResourceManager.GetString("administration_unmute_nobody", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///    Looks up a localized string similar to Unmute successful..
+        /// </summary>
+        public static string administration_unmute_success {
+            get {
+                return ResourceManager.GetString("administration_unmute_success", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///    Looks up a localized string similar to Successfuly removed voice + text feature..
+        /// </summary>
+        public static string administration_voiceplustext_disabled {
+            get {
+                return ResourceManager.GetString("administration_voiceplustext_disabled", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///    Looks up a localized string similar to Done..
+        /// </summary>
+        public static string administration_voiceplustext_done {
+            get {
+                return ResourceManager.GetString("administration_voiceplustext_done", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///    Looks up a localized string similar to Successfuly enabled voice + text feature..
+        /// </summary>
+        public static string administration_voiceplustext_enabled {
+            get {
+                return ResourceManager.GetString("administration_voiceplustext_enabled", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///    Looks up a localized string similar to Error AD-VPT-01: I don&apos;t have manage server and/or Manage Channels permission, so I cannot run voice+text on **{0}** server..
+        /// </summary>
+        public static string administration_voiceplustext_error_insufficient_permision {
+            get {
+                return ResourceManager.GetString("administration_voiceplustext_error_insufficient_permision", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///    Looks up a localized string similar to Error AD-VPT-02: :anger: `I require manage roles and manage channels permissions to enable this feature.`.
+        /// </summary>
+        public static string administration_voiceplustext_error_permission_activation {
+            get {
+                return ResourceManager.GetString("administration_voiceplustext_error_permission_activation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///    Looks up a localized string similar to Error AD-VPT-03: `I have insufficient permission to do that.`.
+        /// </summary>
+        public static string administration_voiceplustext_error_permission_clean {
+            get {
+                return ResourceManager.GetString("administration_voiceplustext_error_permission_clean", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///    Looks up a localized string similar to Error GL-PARAMS: The parameters are invalid..
+        /// </summary>
+        public static string global_params_error {
+            get {
+                return ResourceManager.GetString("global_params_error", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///    Looks up a localized string similar to `Here is a list of users in a specfic role:`.
+        /// </summary>
+        public static string utility_list_specific_role {
+            get {
+                return ResourceManager.GetString("utility_list_specific_role", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///    Looks up a localized string similar to Nobody is playing this game..
+        /// </summary>
+        public static string utility_nobody_playing_this_game {
+            get {
+                return ResourceManager.GetString("utility_nobody_playing_this_game", resourceCulture);
             }
         }
     }

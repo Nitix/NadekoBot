@@ -2,6 +2,6 @@
 {
     public interface ILocalization
     {
-        string this[string key] { get; }
+        string this[string key, ulong guildId] { get; }
     }
 }

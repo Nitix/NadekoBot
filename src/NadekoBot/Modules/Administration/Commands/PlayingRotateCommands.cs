@@ -21,10 +21,13 @@ namespace NadekoBot.Modules.Administration
         [Group]
         public class PlayingRotateCommands
         {
+            private ILocalization _l;
+
             private Logger _log { get; }
 
             public PlayingRotateCommands()
             {
+                _l = NadekoBot.Localizer;
                 _log = LogManager.GetCurrentClassLogger();
                 Task.Run(async () =>
                 {
@@ -101,9 +104,9 @@ namespace NadekoBot.Modules.Administration
                     await uow.CompleteAsync();
                 }
                 if (status)
-                    await channel.SendMessageAsync("`Rotating playing status enabled.`");
+                    await channel.SendMessageAsync(_l["administration_rotateplaying_enabled", channel.Guild.Id]);
                 else
-                    await channel.SendMessageAsync("`Rotating playing status disabled.`");
+                    await channel.SendMessageAsync(_l["administration_rotateplaying_disabled", channel.Guild.Id]);
             }
 
             [LocalizedCommand, LocalizedDescription, LocalizedSummary, LocalizedAlias]
@@ -119,7 +122,7 @@ namespace NadekoBot.Modules.Administration
                     await uow.CompleteAsync();
                 }
 
-                await channel.SendMessageAsync("`Added.`").ConfigureAwait(false);
+                await channel.SendMessageAsync(_l["administration_addplaying_success", channel.Guild.Id]).ConfigureAwait(false);
             }
 
             [LocalizedCommand, LocalizedDescription, LocalizedSummary, LocalizedAlias]
@@ -135,11 +138,11 @@ namespace NadekoBot.Modules.Administration
                 }
 
                 if (!statuses.Any())
-                    await channel.SendMessageAsync("`No rotating playing statuses set.`");
+                    await channel.SendMessageAsync(_l["administration_listplaying_nothing", channel.Guild.Id]);
                 else
                 {
                     var i = 1;
-                    await channel.SendMessageAsync($"{umsg.Author.Mention} `Here is a list of rotating statuses:`\n\n\t" + string.Join("\n\t", statuses.Select(rs => $"`{i++}.` {rs.Status}")));
+                    await channel.SendMessageAsync(string.Format(_l["administration_listplaying_header", channel.Guild.Id], umsg.Author.Mention) + "\n\n\t" + string.Join("\n\t", statuses.Select(rs => $"`{i++}.` {rs.Status}")));
                 }
 
             }
@@ -162,7 +165,7 @@ namespace NadekoBot.Modules.Administration
                     config.RotatingStatusMessages.RemoveAt(index);
                     await uow.CompleteAsync();
                 }
-                await channel.SendMessageAsync($"`Removed the the playing message:` {msg}").ConfigureAwait(false);
+                await channel.SendMessageAsync(string.Format(_l["administration_removeplaying_success", channel.Guild.Id], msg)).ConfigureAwait(false);
             }
         }
     }

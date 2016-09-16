@@ -38,7 +38,7 @@ namespace NadekoBot.Modules.Utility
 
             int i = 0;
             if (!arr.Any())
-                await channel.SendMessageAsync(_l["`Nobody is playing that game.`"]).ConfigureAwait(false);
+                await channel.SendMessageAsync(_l["utility_nobody_playing_this_game", channel.Guild.Id]).ConfigureAwait(false);
             else
                 await channel.SendMessageAsync("```xl\n" + string.Join("\n", arr.GroupBy(item => (i++) / 3).Select(ig => string.Concat(ig.Select(el => $"• {el,-35}")))) + "\n```").ConfigureAwait(false);
         }
@@ -51,7 +51,7 @@ namespace NadekoBot.Modules.Utility
                 return;
             var channel = (ITextChannel)umsg.Channel;
             var arg = roles.Split(',').Select(r => r.Trim().ToUpperInvariant());
-            string send = _l["`Here is a list of users in a specfic role:`"];
+            string send = _l["utility_list_specific_role", channel.Guild.Id];
             foreach (var roleStr in arg.Where(str => !string.IsNullOrWhiteSpace(str) && str != "@EVERYONE" && str != "EVERYONE"))
             {
                 var role = channel.Guild.Roles.Where(r => r.Name.ToUpperInvariant() == roleStr).FirstOrDefault();

@@ -8,9 +8,10 @@ using NadekoBot.Services.Database.Impl;
 namespace NadekoBot.Migrations
 {
     [DbContext(typeof(NadekoSqliteContext))]
-    partial class NadekoSqliteContextModelSnapshot : ModelSnapshot
+    [Migration("20160910223442_GuildLanguage")]
+    partial class GuildLanguage
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
             modelBuilder
                 .HasAnnotation("ProductVersion", "1.0.0-rtm-21431");

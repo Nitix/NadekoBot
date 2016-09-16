@@ -117,4 +117,368 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="administration_addplaying_success" xml:space="preserve">
+    <value>`Added.`</value>
+  </data>
+  <data name="administration_autoassignrole_disabled" xml:space="preserve">
+    <value>`Auto assign role on user join is now disabled.`</value>
+  </data>
+  <data name="administration_autoassignrole_success" xml:space="preserve">
+    <value>`Auto assigned role is set.`</value>
+  </data>
+  <data name="administration_ban_error" xml:space="preserve">
+    <value>Error AD-BAN-01: Most likely I don't have sufficient permissions.</value>
+  </data>
+  <data name="administration_ban_private_message" xml:space="preserve">
+    <value>**You have been BANNED from `{0}` guild.**\nReason: {0}</value>
+    <comment>{0} is the guild name, {1} is the ban reason provided by the administrateur</comment>
+  </data>
+  <data name="administration_ban_success" xml:space="preserve">
+    <value>Banned user {0} Id: {1}</value>
+    <comment>{0} is the user's username,{1} is the Id of the user</comment>
+  </data>
+  <data name="administration_createrole_error" xml:space="preserve">
+    <value>Error AD-CR-01: Unspecified error.</value>
+  </data>
+  <data name="administration_createrole_success" xml:space="preserve">
+    <value>Successfully created role **{0}**</value>
+    <comment>{0} is the name of the role created</comment>
+  </data>
+  <data name="administration_creatvoichanl_success" xml:space="preserve">
+    <value>Created voice channel **{0}**, id `{1}`.</value>
+    <comment>{0} is the channel name, {1} is the channel id</comment>
+  </data>
+  <data name="administration_creatxtchanl_success" xml:space="preserve">
+    <value>Created text channel **{0}**, id `{1}`.</value>
+    <comment>{0} is the channel name, {1} is the channel id</comment>
+  </data>
+  <data name="administration_deafen_error" xml:space="preserve">
+    <value>Error AD-DEAF-01 : I most likely don't have the permission necessary for that.</value>
+  </data>
+  <data name="administration_deafen_nobody" xml:space="preserve">
+    <value>Nobody got deafened.</value>
+  </data>
+  <data name="administration_deafen_success" xml:space="preserve">
+    <value>Deafen successful.</value>
+  </data>
+  <data name="administration_delmsgoncmd_now_deleting" xml:space="preserve">
+    <value>❗`Now automatically deleting successfull command invokations.`</value>
+  </data>
+  <data name="administration_delmsgoncmd_stopped_deletion" xml:space="preserve">
+    <value>❗`Stopped automatic deletion of successfull command invokations.`</value>
+  </data>
+  <data name="administration_deltxtchanl_success" xml:space="preserve">
+    <value>Removed text channel **{0}**, id `{1}`.</value>
+    <comment>{0} is the channel name, {1} is the channel id</comment>
+  </data>
+  <data name="administration_delvoichanl_success" xml:space="preserve">
+    <value>Removed channel **{0}**.</value>
+    <comment>{0} is the channel name</comment>
+  </data>
+  <data name="administration_donadd_success" xml:space="preserve">
+    <value>Successfuly added a new donator. Total donated amount from this user: {0} 👑</value>
+    <comment>{0} is the total donated</comment>
+  </data>
+  <data name="administration_donators_list" xml:space="preserve">
+    <value>**Thanks to the people listed below for making this project happen!**\n</value>
+  </data>
+  <data name="administration_kick_error" xml:space="preserve">
+    <value>Error AD-KICK-02: Most likely I don't have sufficient permissions.</value>
+  </data>
+  <data name="administration_kick_error_user_not_found" xml:space="preserve">
+    <value>Error AD_KICK-01 : User not found.</value>
+  </data>
+  <data name="administration_kick_private_message" xml:space="preserve">
+    <value>**You have been KICKED from `{0}` server.**\nReason: {1}</value>
+    <comment>{0} is the guild name, {1} is the kick reason provided by the administrateur</comment>
+  </data>
+  <data name="administration_kick_success" xml:space="preserve">
+    <value>Kicked user {0} Id: {1}</value>
+  </data>
+  <data name="administration_language_set_done" xml:space="preserve">
+    <value>Language for this guild has been changed.</value>
+  </data>
+  <data name="administration_language_set_error" xml:space="preserve">
+    <value>Can't change the language, please check the language code (ISO 3166 or BCP-47).</value>
+  </data>
+  <data name="administration_language_set_help" xml:space="preserve">
+    <value>Set the language of Nadeko response. `.setlanguage language code`. The language code is either ISO 3166 or BCP-47.</value>
+  </data>
+  <data name="administration_listplaying_header" xml:space="preserve">
+    <value>{0} `Here is a list of rotating statuses:`</value>
+    <comment>{0} is the author of the message</comment>
+  </data>
+  <data name="administration_listplaying_nothing" xml:space="preserve">
+    <value>`No rotating playing statuses set.`</value>
+  </data>
+  <data name="administration_mentionrole_invokation" xml:space="preserve">
+    <value>--{0} has invoked a mention on the following roles--\n</value>
+    <comment>{0} is the mentioned author</comment>
+  </data>
+  <data name="administration_mute_error" xml:space="preserve">
+    <value>Error AD-MUTE-01 : I most likely don't have the permission necessary for that.</value>
+  </data>
+  <data name="administration_mute_nobody" xml:space="preserve">
+    <value>Nobody got muted.</value>
+  </data>
+  <data name="administration_mute_success" xml:space="preserve">
+    <value>Mute successful.</value>
+  </data>
+  <data name="administration_prune_success" xml:space="preserve">
+    <value>:ok: **Prune done, this message will also be deleted**</value>
+  </data>
+  <data name="administration_removeallroles_error" xml:space="preserve">
+    <value>Error AD-RAR-01: Failed to remove roles. Most likely reason: Insufficient permissions.</value>
+  </data>
+  <data name="administration_removeallroles_success" xml:space="preserve">
+    <value>Successfully removed **all** roles from user **{0}**</value>
+    <comment>{0} is the username of the targeted user</comment>
+  </data>
+  <data name="administration_removeplaying_success" xml:space="preserve">
+    <value>`Removed the the playing message:` {0}</value>
+    <comment>{0} is the deleted message</comment>
+  </data>
+  <data name="administration_removerole_error_bot_permission" xml:space="preserve">
+    <value>Error AD-RR-01: Failed to remove role. Bot has insufficient permissions.</value>
+  </data>
+  <data name="administration_removerole_success" xml:space="preserve">
+    <value>Successfully aremoved role **{0}** from user **{1}**</value>
+    <comment>{0} is the role name, {1} is the username of the targeted user</comment>
+  </data>
+  <data name="administration_renamerole_error" xml:space="preserve">
+    <value>Error AD-RENR-01: Failed to rename role. Probably insufficient permissions.</value>
+  </data>
+  <data name="administration_renamerole_error_higher" xml:space="preserve">
+    <value>You can't edit roles higher than your highest role.</value>
+  </data>
+  <data name="administration_renamerole_success" xml:space="preserve">
+    <value>Role renamed.</value>
+  </data>
+  <data name="administration_repeatinvoke_error" xml:space="preserve">
+    <value>`No repeating message found on this server.`</value>
+  </data>
+  <data name="administration_repeat_no_message" xml:space="preserve">
+    <value>`No message is repeating.`</value>
+  </data>
+  <data name="administration_repeat_set" xml:space="preserve">
+    <value>Repeating "{0}" every {1} minutes</value>
+    <comment>{0} is the message</comment>
+  </data>
+  <data name="administration_repeat_stopped" xml:space="preserve">
+    <value>`Stopped repeating a message.`</value>
+  </data>
+  <data name="administration_rolecolor_error" xml:space="preserve">
+    <value>Error AD-RC-02: Error occured, most likely invalid parameters or insufficient permissions.</value>
+  </data>
+  <data name="administration_rolecolor_not_existant" xml:space="preserve">
+    <value>Error AD-RC-01: That role does not exist.</value>
+  </data>
+  <data name="administration_rolecolor_success" xml:space="preserve">
+    <value>Role {0}'s color has been changed.</value>
+    <comment>{0} is the role name</comment>
+  </data>
+  <data name="administration_rotateplaying_disabled" xml:space="preserve">
+    <value>`Rotating playing status disabled.`</value>
+  </data>
+  <data name="administration_rotateplaying_enabled" xml:space="preserve">
+    <value>`Rotating playing status enabled.`</value>
+  </data>
+  <data name="administration_setchanlname_success" xml:space="preserve">
+    <value>:ok: **New channel name set.**</value>
+  </data>
+  <data name="administration_setrole_error_bot_permission" xml:space="preserve">
+    <value>Error AD-SR-01: Failed to add role. Bot has insufficient permissions.</value>
+  </data>
+  <data name="administration_setrole_success" xml:space="preserve">
+    <value>Successfully added role **{0}** to user **{1}**</value>
+    <comment>{0} is the role name, {1} is the username of the targeted user</comment>
+  </data>
+  <data name="administration_settopic_success" xml:space="preserve">
+    <value>:ok: **New channel topic set.**"</value>
+  </data>
+  <data name="administration_slowmode_disabled" xml:space="preserve">
+    <value>`Slow mode disabled.`</value>
+  </data>
+  <data name="administration_slowmode_initied" xml:space="preserve">
+    <value>`Slow mode initiated.` Users can't send more than {0} message(s) every {1} second(s).</value>
+    <comment>{0} is the amount of message, {1} is the second rate</comment>
+  </data>
+  <data name="administration_softban_error" xml:space="preserve">
+    <value>Error AD-SBAN-01: Most likely I don't have sufficient permissions.</value>
+  </data>
+  <data name="administration_softban_private_message" xml:space="preserve">
+    <value>**You have been SOFT-BANNED from `{0}` guild.**\nReason: {1}</value>
+    <comment>{0} is the guild name, {1} is the soft-ban reason provided by the administrateur</comment>
+  </data>
+  <data name="administration_softban_success" xml:space="preserve">
+    <value>Soft-Banned user {0} Id: {1}</value>
+    <comment>{0} is the user's username,{1} is the Id of the user</comment>
+  </data>
+  <data name="administration_undeafen_error" xml:space="preserve">
+    <value>Error AD-UNDEAF-01 : I most likely don't have the permission necessary for that.</value>
+  </data>
+  <data name="administration_undeafen_nobody" xml:space="preserve">
+    <value>Nobody got undeafened.</value>
+  </data>
+  <data name="administration_undeafen_success" xml:space="preserve">
+    <value>Deafen successful.</value>
+  </data>
+  <data name="administration_unmute_error" xml:space="preserve">
+    <value>Error AD-UNMUTE-01 : I most likely don't have the permission necessary for that.</value>
+  </data>
+  <data name="administration_unmute_nobody" xml:space="preserve">
+    <value>Nobody got unmuted.</value>
+  </data>
+  <data name="administration_unmute_success" xml:space="preserve">
+    <value>Unmute successful.</value>
+  </data>
+  <data name="global_params_error" xml:space="preserve">
+    <value>Error GL-PARAMS: The parameters are invalid.</value>
+  </data>
+  <data name="utility_list_specific_role" xml:space="preserve">
+    <value>`Here is a list of users in a specfic role:`</value>
+  </data>
+  <data name="utility_nobody_playing_this_game" xml:space="preserve">
+    <value>Nobody is playing this game.</value>
+  </data>
+  <data name="administration_asar_error_already_list" xml:space="preserve">
+    <value>Error AD-ASAR-01: :anger:Role **{0}** is already in the list.</value>
+    <comment>{0} is the role name</comment>
+  </data>
+  <data name="administration_asar_success" xml:space="preserve">
+    <value>:ok:Role **{0}** added to the list."</value>
+    <comment>{0} is the role name</comment>
+  </data>
+  <data name="administration_byedel_disabled" xml:space="preserve">
+    <value>`Automatic deletion of bye messages has been disabled.`</value>
+  </data>
+  <data name="administration_byedel_enabled" xml:space="preserve">
+    <value>`Automatic deletion of bye messages has been enabled.`</value>
+  </data>
+  <data name="administration_byemsg_advanced_activation" xml:space="preserve">
+    <value>Enable bye messsages by typing `.bye`</value>
+  </data>
+  <data name="administration_byemsg_message_current_msg" xml:space="preserve">
+    <value>`Current bye message:` {0}</value>
+    <comment>{0} the current message</comment>
+  </data>
+  <data name="administration_byemsg_message_set" xml:space="preserve">
+    <value>New bye message set.</value>
+  </data>
+  <data name="administration_bye_disabled" xml:space="preserve">
+    <value>Bye announcements disabled.</value>
+  </data>
+  <data name="administration_bye_enabled" xml:space="preserve">
+    <value>Bye announcements enabled on this channel.</value>
+  </data>
+  <data name="administration_greetdel_disabled" xml:space="preserve">
+    <value>`Automatic deletion of greet messages has been disabled.`</value>
+  </data>
+  <data name="administration_greetdel_enabled" xml:space="preserve">
+    <value>`Automatic deletion of greet messages has been enabled.`</value>
+  </data>
+  <data name="administration_greetdmmsg_advanced_activation" xml:space="preserve">
+    <value>Enable DM greet messsages by typing `.greetdm`</value>
+  </data>
+  <data name="administration_greetdmmsg_current_msg" xml:space="preserve">
+    <value>`Current DM greet message:` {0}</value>
+    <comment>{0} the current message</comment>
+  </data>
+  <data name="administration_greetdmmsg_message_set" xml:space="preserve">
+    <value>New DM greet message set.</value>
+  </data>
+  <data name="administration_greetdm_disabled" xml:space="preserve">
+    <value>Greet announcements disabled.</value>
+  </data>
+  <data name="administration_greetdm_enabled" xml:space="preserve">
+    <value>Greet announcements enabled on this channel.</value>
+  </data>
+  <data name="administration_greetmsg_advanced_activation" xml:space="preserve">
+    <value>Enable greet messsages by typing `.greet`</value>
+  </data>
+  <data name="administration_greetmsg_current_message" xml:space="preserve">
+    <value>`Current greet message:` {0}</value>
+    <comment>{0} the current message</comment>
+  </data>
+  <data name="administration_greetmsg_message_set" xml:space="preserve">
+    <value>New greet message set.</value>
+  </data>
+  <data name="administration_greet_disabled" xml:space="preserve">
+    <value>Greet announcements disabled.</value>
+  </data>
+  <data name="administration_greet_enabled" xml:space="preserve">
+    <value>Greet announcements enabled on this channel.</value>
+  </data>
+  <data name="administration_iamnot_have_not_role" xml:space="preserve">
+    <value>Error AD-IAM-02: :anger:You don't have {0} role.</value>
+    <comment>{0} is the role name</comment>
+  </data>
+  <data name="administration_iamnot_insufficient_permission" xml:space="preserve">
+    <value>Error AD-IAMN-03: :anger:`I am unable to add that role to you. I can't remove roles to owners or other roles higher than my role in the role hierarchy.`</value>
+  </data>
+  <data name="administration_iamnot_not_assignable" xml:space="preserve">
+    <value>Error AD-IAM-01: :anger:That role is not self-assignable.</value>
+  </data>
+  <data name="administration_iamnot_success" xml:space="preserve">
+    <value>:ok: You no longer have {0} role.</value>
+    <comment>{0} is the role name</comment>
+  </data>
+  <data name="administration_iam_already_have_role" xml:space="preserve">
+    <value>:anger:You already have {0} role.</value>
+    <comment>{0} is the role name</comment>
+  </data>
+  <data name="administration_iam_have_exclusive" xml:space="preserve">
+    <value>Error AD-IAM-02: :anger:You already have {0} exclusive self-assigned role.</value>
+    <comment>[0} is the excluise role name</comment>
+  </data>
+  <data name="administration_iam_insufficient_permission" xml:space="preserve">
+    <value>Error AD-IAM-03: :anger:`I am unable to add that role to you. I can't add roles to owners or other roles higher than my role in the role hierarchy.`</value>
+  </data>
+  <data name="administration_iam_not_assignable" xml:space="preserve">
+    <value>Error AD-IAM-01: :anger:That role is not self-assignable.</value>
+  </data>
+  <data name="administration_iam_success" xml:space="preserve">
+    <value>:ok:You now have {0} role.</value>
+    <comment>{0} is the role name</comment>
+  </data>
+  <data name="administration_lsar_cleanup" xml:space="preserve">
+    <value>`{0} not found. Cleaned up.`</value>
+    <comment>{0} is the role Id</comment>
+  </data>
+  <data name="administration_lsar_number" xml:space="preserve">
+    <value>There are `{0}` self assignable roles:</value>
+    <comment>{0} is the number of self assignale role</comment>
+  </data>
+  <data name="administration_rsar_error_not_assignable" xml:space="preserve">
+    <value>Error AD-RSAR-01: :anger:That role is not self-assignable.</value>
+  </data>
+  <data name="administration_rsar_success" xml:space="preserve">
+    <value>:ok:**{0}** has been removed from the list of self-assignable roles</value>
+    <comment>{0} is the role name</comment>
+  </data>
+  <data name="administration_tesar_exclusive" xml:space="preserve">
+    <value>Self assigned roles are now exclusive.</value>
+  </data>
+  <data name="administration_tesar_not_exclusive" xml:space="preserve">
+    <value>Self assigned roles are now not exclusive.</value>
+  </data>
+  <data name="administration_voiceplustext_disabled" xml:space="preserve">
+    <value>Successfuly removed voice + text feature.</value>
+  </data>
+  <data name="administration_voiceplustext_done" xml:space="preserve">
+    <value>Done.</value>
+  </data>
+  <data name="administration_voiceplustext_enabled" xml:space="preserve">
+    <value>Successfuly enabled voice + text feature.</value>
+  </data>
+  <data name="administration_voiceplustext_error_insufficient_permision" xml:space="preserve">
+    <value>Error AD-VPT-01: I don't have manage server and/or Manage Channels permission, so I cannot run voice+text on **{0}** server.</value>
+    <comment>[0} is the guild name</comment>
+  </data>
+  <data name="administration_voiceplustext_error_permission_activation" xml:space="preserve">
+    <value>Error AD-VPT-02: :anger: `I require manage roles and manage channels permissions to enable this feature.`</value>
+  </data>
+  <data name="administration_voiceplustext_error_permission_clean" xml:space="preserve">
+    <value>Error AD-VPT-03: `I have insufficient permission to do that.`</value>
+  </data>
 </root>

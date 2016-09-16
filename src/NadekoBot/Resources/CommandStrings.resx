@@ -2637,4 +2637,13 @@
   <data name="cash_text" xml:space="preserve">
     <value>cash $$</value>
   </data>
+  <data name="setlanguage_desc" xml:space="preserve">
+    <value>Set the language response of Nadeko for this guild.</value>
+  </data>
+  <data name="setlanguage_summary" xml:space="preserve">
+    <value>`.setlanguage Language code`. The language code is either ISO 3166 or BCP-47.</value>
+  </data>
+  <data name="setlanguage_text" xml:space="preserve">
+    <value>setlanguage</value>
+  </data>
 </root>

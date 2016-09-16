@@ -6027,6 +6027,33 @@ namespace NadekoBot.Resources {
         }
         
         /// <summary>
+        ///    Looks up a localized string similar to Set the language response of Nadeko for this guild..
+        /// </summary>
+        public static string setlanguage_desc {
+            get {
+                return ResourceManager.GetString("setlanguage_desc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///    Looks up a localized string similar to `.setlanguage Language code`. The language code is either ISO 3166 or BCP-47..
+        /// </summary>
+        public static string setlanguage_summary {
+            get {
+                return ResourceManager.GetString("setlanguage_summary", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///    Looks up a localized string similar to setlanguage.
+        /// </summary>
+        public static string setlanguage_text {
+            get {
+                return ResourceManager.GetString("setlanguage_text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///    Looks up a localized string similar to Sets a maximum queue size. Supply 0 or no argument to have no limit..
         /// </summary>
         public static string setmaxqueue_desc {

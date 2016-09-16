@@ -17,9 +17,11 @@ namespace NadekoBot.Modules.Administration
         {
             public static long Greeted = 0;
             private Logger _log;
+            private ILocalization _l;
 
             public ServerGreetCommands()
             {
+                _l = NadekoBot.Localizer;
                 NadekoBot.Client.UserJoined += UserJoined;
                 NadekoBot.Client.UserLeft += UserLeft;
                 _log = LogManager.GetCurrentClassLogger();
@@ -123,9 +125,9 @@ namespace NadekoBot.Modules.Administration
                 }
 
                 if (conf.AutoDeleteGreetMessages)
-                    await channel.SendMessageAsync("`Automatic deletion of greet messages has been enabled.`").ConfigureAwait(false);
+                    await channel.SendMessageAsync(_l["administration_greetdel_enabled", channel.Guild.Id]).ConfigureAwait(false);
                 else
-                    await channel.SendMessageAsync("`Automatic deletion of greet messages has been disabled.`").ConfigureAwait(false);
+                    await channel.SendMessageAsync(_l["administration_greetdel_disabled", channel.Guild.Id]).ConfigureAwait(false);
             }
 
             [LocalizedCommand, LocalizedDescription, LocalizedSummary, LocalizedAlias]
@@ -146,9 +148,9 @@ namespace NadekoBot.Modules.Administration
                 }
 
                 if (conf.SendChannelGreetMessage)
-                    await channel.SendMessageAsync("Greet announcements enabled on this channel.").ConfigureAwait(false);
+                    await channel.SendMessageAsync(_l["administration_greet_enabled", channel.Guild.Id]).ConfigureAwait(false);
                 else
-                    await channel.SendMessageAsync("Greet announcements disabled.").ConfigureAwait(false);
+                    await channel.SendMessageAsync(_l["administration_greet_disabled", channel.Guild.Id]).ConfigureAwait(false);
             }
             
             [LocalizedCommand, LocalizedDescription, LocalizedSummary, LocalizedAlias]
@@ -172,12 +174,12 @@ namespace NadekoBot.Modules.Administration
 
                 if (string.IsNullOrWhiteSpace(text))
                 {
-                    await channel.SendMessageAsync("`Current greet message:` " + conf.ChannelGreetMessageText);
+                    await channel.SendMessageAsync(string.Format(_l["administration_greetmsg_current_message", channel.Guild.Id], conf.ChannelGreetMessageText));
                     return;
                 }
-                await channel.SendMessageAsync("New greet message set.").ConfigureAwait(false);
+                await channel.SendMessageAsync(_l["administration_greetmsg_message_set", channel.Guild.Id]).ConfigureAwait(false);
                 if (!conf.SendChannelGreetMessage)
-                    await channel.SendMessageAsync("Enable greet messsages by typing `.greet`").ConfigureAwait(false);
+                    await channel.SendMessageAsync(_l["administration_greetmsg_advanced_activation", channel.Guild.Id]).ConfigureAwait(false);
             }
 
             [LocalizedCommand, LocalizedDescription, LocalizedSummary, LocalizedAlias]
@@ -197,9 +199,9 @@ namespace NadekoBot.Modules.Administration
                 }
 
                 if (conf.SendDmGreetMessage)
-                    await channel.SendMessageAsync("Greet announcements enabled on this channel.").ConfigureAwait(false);
+                    await channel.SendMessageAsync(_l["administration_greetdm_enabled", channel.Guild.Id]).ConfigureAwait(false);
                 else
-                    await channel.SendMessageAsync("Greet announcements disabled.").ConfigureAwait(false);
+                    await channel.SendMessageAsync(_l["administration_greetdm_disabled", channel.Guild.Id]).ConfigureAwait(false);
             }
             
             [LocalizedCommand, LocalizedDescription, LocalizedSummary, LocalizedAlias]
@@ -223,12 +225,12 @@ namespace NadekoBot.Modules.Administration
 
                 if (string.IsNullOrWhiteSpace(text))
                 {
-                    await channel.SendMessageAsync("`Current DM greet message:` " + conf.DmGreetMessageText);
+                    await channel.SendMessageAsync(string.Format(_l["administration_greetdmmsg_current_msg", channel.Guild.Id], conf.DmGreetMessageText));
                     return;
                 }
-                await channel.SendMessageAsync("New DM greet message set.").ConfigureAwait(false);
+                await channel.SendMessageAsync(_l["administration_greetdmmsg_message_set", channel.Guild.Id]).ConfigureAwait(false);
                 if (!conf.SendDmGreetMessage)
-                    await channel.SendMessageAsync("Enable DM greet messsages by typing `.greetdm`").ConfigureAwait(false);
+                    await channel.SendMessageAsync(_l["administration_greetdmmsg_advanced_activation", channel.Guild.Id]).ConfigureAwait(false);
             }
 
             [LocalizedCommand, LocalizedDescription, LocalizedSummary, LocalizedAlias]
@@ -249,9 +251,9 @@ namespace NadekoBot.Modules.Administration
                 }
 
                 if (conf.SendChannelByeMessage)
-                    await channel.SendMessageAsync("Bye announcements enabled on this channel.").ConfigureAwait(false);
+                    await channel.SendMessageAsync(_l["administration_bye_enabled", channel.Guild.Id]).ConfigureAwait(false);
                 else
-                    await channel.SendMessageAsync("Bye announcements disabled.").ConfigureAwait(false);
+                    await channel.SendMessageAsync(_l["administration_bye_disabled", channel.Guild.Id]).ConfigureAwait(false);
             }
 
             [LocalizedCommand, LocalizedDescription, LocalizedSummary, LocalizedAlias]
@@ -275,12 +277,12 @@ namespace NadekoBot.Modules.Administration
 
                 if (string.IsNullOrWhiteSpace(text))
                 {
-                    await channel.SendMessageAsync("`Current bye message:` " + conf.ChannelGreetMessageText);
+                    await channel.SendMessageAsync(string.Format(_l["administration_bye_message_current_msg", channel.Guild.Id], conf.ChannelGreetMessageText));
                     return;
                 }
-                await channel.SendMessageAsync("New bye message set.").ConfigureAwait(false);
+                await channel.SendMessageAsync(_l["administration_byemsg_message_set", channel.Guild.Id]).ConfigureAwait(false);
                 if (!conf.SendChannelByeMessage)
-                    await channel.SendMessageAsync("Enable bye messsages by typing `.bye`").ConfigureAwait(false);
+                    await channel.SendMessageAsync(_l["administration_byemsg_advanced_activation", channel.Guild.Id]).ConfigureAwait(false);
             }
 
             [LocalizedCommand, LocalizedDescription, LocalizedSummary, LocalizedAlias]
@@ -300,9 +302,9 @@ namespace NadekoBot.Modules.Administration
                 }
 
                 if (conf.AutoDeleteByeMessages)
-                    await channel.SendMessageAsync("`Automatic deletion of bye messages has been enabled.`").ConfigureAwait(false);
+                    await channel.SendMessageAsync(_l["administration_byedel_enabled", channel.Guild.Id]).ConfigureAwait(false);
                 else
-                    await channel.SendMessageAsync("`Automatic deletion of bye messages has been disabled.`").ConfigureAwait(false);
+                    await channel.SendMessageAsync(_l["administration_byedel_disabled", channel.Guild.Id]).ConfigureAwait(false);
             }
 
         }

@@ -20,6 +20,7 @@ namespace NadekoBot.Modules.Administration
         public class RepeatCommands
         {
             public ConcurrentDictionary<ulong, RepeatRunner> repeaters;
+            private ILocalization _l;
 
             public class RepeatRunner
             {
@@ -67,6 +68,7 @@ namespace NadekoBot.Modules.Administration
 
             public RepeatCommands()
             {
+                _l = NadekoBot.Localizer;
                 using (var uow = DbHandler.UnitOfWork())
                 {
                     repeaters = new ConcurrentDictionary<ulong, RepeatRunner>(uow.Repeaters.GetAll().Select(r => new RepeatRunner(r)).Where(r => r != null).ToDictionary(r => r.Repeater.ChannelId));
@@ -83,7 +85,7 @@ namespace NadekoBot.Modules.Administration
                 RepeatRunner rep;
                 if (!repeaters.TryGetValue(channel.Id, out rep))
                 {
-                    await channel.SendMessageAsync("`No repeating message found on this server.`").ConfigureAwait(false);
+                    await channel.SendMessageAsync(_l["administration_repeatinvoke_error", channel.Guild.Id]).ConfigureAwait(false);
                     return;
                 }
                 rep.Reset();
@@ -104,10 +106,10 @@ namespace NadekoBot.Modules.Administration
                         await uow.CompleteAsync();
                     }
                     rep.Stop();
-                    await channel.SendMessageAsync("`Stopped repeating a message.`").ConfigureAwait(false);
+                    await channel.SendMessageAsync(_l["administration_repeat_stopped", channel.Guild.Id]).ConfigureAwait(false);
                 }
                 else
-                    await channel.SendMessageAsync("`No message is repeating.`").ConfigureAwait(false);
+                    await channel.SendMessageAsync(_l["administration_repeat_no_message", channel.Guild.Id]).ConfigureAwait(false);
             }
 
             [LocalizedCommand, LocalizedDescription, LocalizedSummary, LocalizedAlias]
@@ -152,7 +154,7 @@ namespace NadekoBot.Modules.Administration
                     return old;
                 });
 
-                await channel.SendMessageAsync($"Repeating \"{rep.Repeater.Message}\" every {rep.Repeater.Interval} minutes").ConfigureAwait(false);
+                await channel.SendMessageAsync(string.Format(_l["administration_repeat_set", channel.Guild.Id], rep.Repeater.Message, rep.Repeater.Interval)).ConfigureAwait(false);
             }
         }
     }

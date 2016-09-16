@@ -1,4 +1,7 @@
 ﻿using System;
+using System.Globalization;
+using NadekoBot.Services.Database.Models;
+using NLog;
 
 namespace NadekoBot.Services
 {
@@ -6,10 +9,39 @@ namespace NadekoBot.Services
     {
         public string this[string key] => LoadCommandString(key);
 
+        public string this[string key, ulong guildId] => GetResponseString(key, guildId);
+
         public static string LoadCommandString(string key)
         {
-            string toReturn = Resources.CommandStrings.ResourceManager.GetString(key);
+            var toReturn = Resources.CommandStrings.ResourceManager.GetString(key);
             return string.IsNullOrWhiteSpace(toReturn) ? key : toReturn;
+        }
+
+        public static string GetResponseString(string key, ulong serverId)
+        {
+            var toReturn = Resources.ResponseStrings.ResourceManager.GetString(key, GetGuildLanguage(serverId));
+            return string.IsNullOrWhiteSpace(toReturn) ? key : toReturn;
+        }
+
+        private static CultureInfo GetGuildLanguage(ulong serverId)
+        {
+            GuildConfig guild;
+            using (var uow = DbHandler.UnitOfWork())
+            {
+                guild = uow.GuildConfigs.For(serverId);
+            }
+            if (guild == null)
+            {
+                return new CultureInfo("EN");
+            }
+            try
+            {
+                return new CultureInfo(guild.Language);
+            }
+            catch
+            {
+                return new CultureInfo("EN"); //Fallback
+            }
         }
 
         //private static string GetCommandString(string key)
