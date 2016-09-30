@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -9,7 +10,19 @@ namespace NadekoBot.Services.Database.Models
     public class LogSetting : DbEntity
     {
         public bool IsLogging { get; set; }
-        public ulong ChannelId { get; set; }
+        /// <summary>
+        /// <strong>DO NOT USE IT DIRECTLY</strong>, pls use <see cref="ChannelId"/>.
+        /// It's used internally by EF
+        /// </summary>
+        [Column("ChannelId")]
+        public long _channelId { get; set; }
+
+        [NotMapped]
+        public ulong ChannelId
+        {
+            get { return Convert.ToUInt64(_channelId); }
+            set { _channelId = Convert.ToInt64(value); }
+        }
         public HashSet<IgnoredLogChannel> IgnoredChannels { get; set; }
 
         public bool MessageReceived { get; set; } = true;
@@ -28,11 +41,37 @@ namespace NadekoBot.Services.Database.Models
 
         //userpresence
         public bool LogUserPresence { get; set; } = false;
-        public ulong UserPresenceChannelId { get; set; }
+
+        /// <summary>
+        /// <strong>DO NOT USE IT DIRECTLY</strong>, pls use <see cref="UserPresenceChannelId"/>.
+        /// It's used internally by EF
+        /// </summary>
+        [Column("UserPresenceChannelId")]
+        public long _userPresenceChannelId { get; set; }
+
+        [NotMapped]
+        public ulong UserPresenceChannelId
+        {
+            get { return Convert.ToUInt64(_userPresenceChannelId); }
+            set { _userPresenceChannelId = Convert.ToInt64(value); }
+        }
 
         //voicepresence
         public bool LogVoicePresence { get; set; } = false;
-        public ulong VoicePresenceChannelId { get; set; }
+
+        /// <summary>
+        /// <strong>DO NOT USE IT DIRECTLY</strong>, pls use <see cref="VoicePresenceChannelId"/>.
+        /// It's used internally by EF
+        /// </summary>
+        [Column("VoicePresenceChannelId")]
+        public long _voicePresenceChannelId { get; set; }
+
+        [NotMapped]
+        public ulong VoicePresenceChannelId
+        {
+            get { return Convert.ToUInt64(_voicePresenceChannelId); }
+            set { _voicePresenceChannelId = Convert.ToInt64(value); }
+        }
         public HashSet<IgnoredVoicePresenceChannel> IgnoredVoicePresenceChannelIds { get; set; }
 
     }

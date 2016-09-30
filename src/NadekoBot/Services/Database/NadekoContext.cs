@@ -109,7 +109,7 @@ namespace NadekoBot.Services.Database
             }
         }
 
-        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        protected override void OnModelCreating(Microsoft.EntityFrameworkCore.ModelBuilder modelBuilder)
         {
             #region QUOTES
             
@@ -121,7 +121,7 @@ namespace NadekoBot.Services.Database
 
             var donatorEntity = modelBuilder.Entity<Donator>();
             donatorEntity
-                .HasIndex(d => d.UserId)
+                .HasIndex(d => d._userId)
                 .IsUnique();
 
             #endregion
@@ -130,7 +130,7 @@ namespace NadekoBot.Services.Database
 
             var configEntity = modelBuilder.Entity<GuildConfig>();
             configEntity
-                .HasIndex(c => c.GuildId)
+                .HasIndex(c => c._guildId)
                 .IsUnique();
 
             #endregion
@@ -158,7 +158,7 @@ namespace NadekoBot.Services.Database
             var selfassignableRolesEntity = modelBuilder.Entity<SelfAssignedRole>();
 
             selfassignableRolesEntity
-                .HasIndex(s => new { s.GuildId, s.RoleId })
+                .HasIndex(s => new { s._guildId, s._roleId })
                 .IsUnique();
 
             #endregion
@@ -168,7 +168,7 @@ namespace NadekoBot.Services.Database
             var repeaterEntity = modelBuilder.Entity<Repeater>();
 
             repeaterEntity
-                .HasIndex(r => r.ChannelId)
+                .HasIndex(r => r._channelId)
                 .IsUnique();
 
             #endregion
@@ -177,7 +177,7 @@ namespace NadekoBot.Services.Database
             var currencyEntity = modelBuilder.Entity<Currency>();
 
             currencyEntity
-                .HasIndex(c => c.UserId)
+                .HasIndex(c => c._userId)
                 .IsUnique();
             #endregion
 

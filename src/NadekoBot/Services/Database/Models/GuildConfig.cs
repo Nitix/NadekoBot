@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -8,16 +10,67 @@ namespace NadekoBot.Services.Database.Models
 {
     public class GuildConfig : DbEntity
     {
-        public ulong GuildId { get; set; }
+        /// <summary>
+        /// <strong>DO NOT USE IT DIRECTLY</strong>, pls use <see cref="GuildId"/>.
+        /// It's used internally by EF
+        /// </summary>
+        [Column("GuildId")]
+        public long _guildId { get; set; }
+
+        [NotMapped]
+        public ulong GuildId
+        {
+            get { return Convert.ToUInt64(_guildId); }
+            set { _guildId = Convert.ToInt64(value); }
+        }
         public bool DeleteMessageOnCommand { get; set; }
-        public ulong AutoAssignRoleId { get; set; }
+
+        /// <summary>
+        /// <strong>DO NOT USE IT DIRECTLY</strong>, pls use <see cref="AutoAssignRoleId"/>.
+        /// It's used internally by EF
+        /// </summary>
+        [Column("AutoAssignRoleId")]
+        public long _autoAssignRoleId { get; set; }
+
+        [NotMapped]
+        public ulong AutoAssignRoleId
+        {
+            get { return Convert.ToUInt64(_autoAssignRoleId); }
+            set { _autoAssignRoleId = Convert.ToInt64(value); }
+        }
+
         //greet stuff
         public bool AutoDeleteGreetMessages { get; set; }
         public bool AutoDeleteByeMessages { get; set; }
         public int AutoDeleteGreetMessagesTimer { get; set; } = 30;
 
-        public ulong GreetMessageChannelId { get; set; }
-        public ulong ByeMessageChannelId { get; set; }
+        /// <summary>
+        /// <strong>DO NOT USE IT DIRECTLY</strong>, pls use <see cref="GreetMessageChannelId"/>.
+        /// It's used internally by EF
+        /// </summary>
+        [Column("GreetMessageChannelId")]
+        public long _greetMessageChannelId { get; set; }
+
+        [NotMapped]
+        public ulong GreetMessageChannelId
+        {
+            get { return Convert.ToUInt64(_greetMessageChannelId); }
+            set { _greetMessageChannelId = Convert.ToInt64(value); }
+        }
+
+        /// <summary>
+        /// <strong>DO NOT USE IT DIRECTLY</strong>, pls use <see cref="ByeMessageChannelId"/>.
+        /// It's used internally by EF
+        /// </summary>
+        [Column("ByeMessageChannelId")]
+        public long _byeMessageChannelId { get; set; }
+
+        [NotMapped]
+        public ulong ByeMessageChannelId
+        {
+            get { return Convert.ToUInt64(_byeMessageChannelId); }
+            set { _byeMessageChannelId = Convert.ToInt64(value); }
+        }
 
         public bool SendDmGreetMessage { get; set; }
         public string DmGreetMessageText { get; set; } = "Welcome to the %server% server, %user%!";
@@ -40,7 +93,19 @@ namespace NadekoBot.Services.Database.Models
         public List<FollowedStream> FollowedStreams { get; set; } = new List<FollowedStream>();
 
         //currencyGeneration
-        public ulong? GenerateCurrencyChannelId { get; set; }
+        /// <summary>
+        /// <strong>DO NOT USE IT DIRECTLY</strong>, pls use <see cref="GenerateCurrencyChannelId"/>.
+        /// It's used internally by EF
+        /// </summary>
+        [Column("GenerateCurrencyChannelId")]
+        public long? _generateCurrencyChannelId { get; set; }
+
+        [NotMapped]
+        public ulong? GenerateCurrencyChannelId
+        {
+            get { return _generateCurrencyChannelId.HasValue ? Convert.ToUInt64(_generateCurrencyChannelId) : (ulong?) null; }
+            set { _generateCurrencyChannelId = Convert.ToInt64(value); }
+        }
 
         //permissions
         public Permission RootPermission { get; set; }

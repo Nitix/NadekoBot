@@ -67,7 +67,7 @@ namespace NadekoBot.Modules.Utility
                     }
                     else
                     {
-                        ch = NadekoBot.Client.GetGuild(r.ServerId)?.GetTextChannel(r.ChannelId);
+                        ch = NadekoBot.Client.GetGuild(r.GuildId)?.GetTextChannel(r.ChannelId);
                     }
                     if (ch == null)
                         return;
@@ -171,7 +171,7 @@ namespace NadekoBot.Modules.Utility
                     When = time,
                     Message = message,
                     UserId = umsg.Author.Id,
-                    ServerId = channel.Guild.Id
+                    GuildId = channel.Guild.Id
                 };
 
                 using (var uow = DbHandler.UnitOfWork())
