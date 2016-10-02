@@ -13,7 +13,6 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
-//todo owner only
 namespace NadekoBot.Modules.Administration
 {
     public partial class Administration
@@ -88,6 +87,7 @@ namespace NadekoBot.Modules.Administration
 
             [LocalizedCommand, LocalizedRemarks, LocalizedSummary, LocalizedAlias]
             [RequireContext(ContextType.Guild)]
+            [OwnerOnly]
             public async Task RotatePlaying(IUserMessage umsg)
             {
                 var channel = (ITextChannel)umsg.Channel;
@@ -108,6 +108,7 @@ namespace NadekoBot.Modules.Administration
 
             [LocalizedCommand, LocalizedRemarks, LocalizedSummary, LocalizedAlias]
             [RequireContext(ContextType.Guild)]
+            [OwnerOnly]
             public async Task AddPlaying(IUserMessage umsg, [Remainder] string status)
             {
                 var channel = (ITextChannel)umsg.Channel;
@@ -124,6 +125,7 @@ namespace NadekoBot.Modules.Administration
 
             [LocalizedCommand, LocalizedRemarks, LocalizedSummary, LocalizedAlias]
             [RequireContext(ContextType.Guild)]
+            [OwnerOnly]
             public async Task ListPlaying(IUserMessage umsg)
             {
                 var channel = (ITextChannel)umsg.Channel;
@@ -146,6 +148,7 @@ namespace NadekoBot.Modules.Administration
 
             [LocalizedCommand, LocalizedRemarks, LocalizedSummary, LocalizedAlias]
             [RequireContext(ContextType.Guild)]
+            [OwnerOnly]
             public async Task RemovePlaying(IUserMessage umsg, int index)
             {
                 var channel = (ITextChannel)umsg.Channel;

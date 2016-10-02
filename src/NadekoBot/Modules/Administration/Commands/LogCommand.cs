@@ -22,7 +22,7 @@ namespace NadekoBot.Modules.Administration
         [Group]
         public class LogCommands
         {
-            private DiscordSocketClient _client { get; }
+            private ShardedDiscordClient _client { get; }
             private Logger _log { get; }
 
             private string prettyCurrentTime => $"【{DateTime.Now:HH:mm:ss}】";
@@ -33,7 +33,7 @@ namespace NadekoBot.Modules.Administration
             private Timer t;
             private IGoogleApiService _google { get; }
 
-            public LogCommands(DiscordSocketClient client, IGoogleApiService google)
+            public LogCommands(ShardedDiscordClient client, IGoogleApiService google)
             {
                 _client = client;
                 _google = google;
@@ -484,6 +484,7 @@ namespace NadekoBot.Modules.Administration
 
             [LocalizedCommand, LocalizedRemarks, LocalizedSummary, LocalizedAlias]
             [RequireContext(ContextType.Guild)]
+            [OwnerOnly]
             public async Task LogServer(IUserMessage msg)
             {
                 var channel = (ITextChannel)msg.Channel;
@@ -506,6 +507,7 @@ namespace NadekoBot.Modules.Administration
 
             [LocalizedCommand, LocalizedRemarks, LocalizedSummary, LocalizedAlias]
             [RequireContext(ContextType.Guild)]
+            [OwnerOnly]
             public async Task LogIgnore(IUserMessage imsg)
             {
                 var channel = (ITextChannel)imsg.Channel;
@@ -529,6 +531,7 @@ namespace NadekoBot.Modules.Administration
 
             [LocalizedCommand, LocalizedRemarks, LocalizedSummary, LocalizedAlias]
             [RequireContext(ContextType.Guild)]
+            [OwnerOnly]
             public async Task LogAdd(IUserMessage msg, [Remainder] string eventName)
             {
                 var channel = (ITextChannel)msg.Channel;

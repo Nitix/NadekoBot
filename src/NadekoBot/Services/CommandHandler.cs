@@ -18,13 +18,13 @@ namespace NadekoBot.Services
 {
     public class CommandHandler
     {
-        private DiscordSocketClient _client;
+        private ShardedDiscordClient  _client;
         private CommandService _commandService;
         private Logger _log;
 
         public event EventHandler<CommandExecutedEventArgs> CommandExecuted = delegate { };
 
-        public CommandHandler(DiscordSocketClient client, CommandService commandService)
+        public CommandHandler(ShardedDiscordClient client, CommandService commandService)
         {
             _client = client;
             _commandService = commandService;
@@ -43,12 +43,28 @@ namespace NadekoBot.Services
 
             var throwaway = Task.Run(async () =>
             {
-                var sw = new Stopwatch();
+              var sw = new Stopwatch();
                 sw.Start();
 
                 try
                 {
-                    var t = await ExecuteCommand(usrMsg, usrMsg.Content, guild, usrMsg.Author, MultiMatchHandling.Best);
+                    
+                    bool verbose = false;
+                    Permission rootPerm = null;
+                    string permRole = "";
+                    if (guild != null)
+                    {
+                        using (var uow = DbHandler.UnitOfWork())
+                        {
+                            var config = uow.GuildConfigs.PermissionsFor(guild.Id);
+                            verbose = config.VerbosePermissions;
+                            rootPerm = config.RootPermission;
+                            permRole = config.PermissionRole.Trim().ToLowerInvariant();
+                        }
+                    }
+
+
+                    var t = await ExecuteCommand(usrMsg, usrMsg.Content, guild, usrMsg.Author, rootPerm, permRole, MultiMatchHandling.Best);
                     var command = t.Item1;
                     var result = t.Item2;
                     sw.Stop();
@@ -85,34 +101,23 @@ namespace NadekoBot.Services
                                   );
                         if (guild != null && command != null && result.Error == CommandError.Exception)
                         {
-                            bool verbose;
-                            using (var uow = DbHandler.UnitOfWork())
-                            {
-                                verbose = uow.GuildConfigs.For(guild.Id).VerbosePermissions;
-                            }
                             if (verbose)
                                 await msg.Channel.SendMessageAsync(":warning: " + result.ErrorReason).ConfigureAwait(false);
                         }
                     }
                 }
-                catch (InvalidOperationException ex)
+                catch (Exception ex)
                 {
-                    Console.WriteLine(ex);
-                }
-                catch (SqliteException ex)
-                {
-                    Console.WriteLine(ex.InnerException);
-                }
-                catch (HttpException ex)
-                {
-                    Console.WriteLine(ex);
+                    _log.Warn(ex, "Error in CommandHandler");
+                    if(ex.InnerException != null)
+                        _log.Warn(ex.InnerException, "Inner Exception of the error in CommandHandler");
                 }
             });
 
             return Task.CompletedTask;
         }
 
-        public async Task<Tuple<Command,IResult>> ExecuteCommand(IUserMessage message, string input, IGuild guild, IUser user, MultiMatchHandling multiMatchHandling = MultiMatchHandling.Best) {
+        public async Task<Tuple<Command,IResult>> ExecuteCommand(IUserMessage message, string input, IGuild guild, IUser user, Permission rootPerm, string permRole, MultiMatchHandling multiMatchHandling = MultiMatchHandling.Best) {
             var searchResult = _commandService.Search(message, input);
             if (!searchResult.IsSuccess)
                 return new Tuple<Command, IResult>(null, searchResult);
@@ -154,19 +159,23 @@ namespace NadekoBot.Services
                     }
                 }
                 var cmd = commands[i];
-                Permission rootPerm;
                 //check permissions
                 if (guild != null)
                 {
-                    using (var uow = DbHandler.UnitOfWork())
-                    {
-                        rootPerm = uow.GuildConfigs.PermissionsFor(guild.Id).RootPermission;
-                    }
                     int index;
-                    if (!rootPerm.AsEnumerable().CheckPermissions(message, cmd, out index))
+                    if (!rootPerm.AsEnumerable().CheckPermissions(message, cmd.Name, cmd.Module.Name, out index))
                     {
                         var returnMsg = $"Permission number #{index} **{rootPerm.GetAt(index).GetCommand()}** is preventing this action.";
                         return new Tuple<Command, IResult>(cmd, SearchResult.FromError(CommandError.Exception, returnMsg));
+                    }
+
+
+                    if (cmd.Module.Source.Name == typeof(Permissions).Name) //permissions, you must have special role
+                    {
+                        if (!((IGuildUser)user).Roles.Any(r => r.Name.Trim().ToLowerInvariant() == permRole))
+                        {
+                            return new Tuple<Command, IResult>(cmd, SearchResult.FromError(CommandError.Exception, $"You need a **{permRole}** role in order to use permission commands."));
+                        }
                     }
                 }
 
