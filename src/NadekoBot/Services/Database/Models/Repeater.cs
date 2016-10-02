@@ -19,8 +19,8 @@ namespace NadekoBot.Services.Database.Models
         [NotMapped]
         public ulong GuildId
         {
-            get { return Convert.ToUInt64(_guildId); }
-            set { _guildId = Convert.ToInt64(value); }
+            get { return (ulong) _guildId; }
+            set { _guildId = (long) value; }
         }
 
         /// <summary>
@@ -33,8 +33,8 @@ namespace NadekoBot.Services.Database.Models
         [NotMapped]
         public ulong ChannelId
         {
-            get { return Convert.ToUInt64(_channelId); }
-            set { _channelId = Convert.ToInt64(value); }
+            get { return (ulong) _channelId; }
+            set { _channelId = (long) value; }
         }
         public string Message { get; set; }
         public TimeSpan Interval { get; set; }

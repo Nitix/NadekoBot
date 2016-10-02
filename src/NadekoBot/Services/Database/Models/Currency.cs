@@ -19,8 +19,8 @@ namespace NadekoBot.Services.Database.Models
         [NotMapped]
         public ulong UserId
         {
-            get { return Convert.ToUInt64(_userId); }
-            set { _userId = Convert.ToInt64(value); }
+            get { return (ulong) _userId; }
+            set { _userId = (long) value; }
         }
 
         public long Amount { get; set; }

@@ -28,8 +28,8 @@ namespace NadekoBot.Services.Database.Models
         [NotMapped]
         public ulong BufferSize
         {
-            get { return Convert.ToUInt64(_bufferSize); }
-            set { _bufferSize = Convert.ToInt64(value); }
+            get { return (ulong) _bufferSize; }
+            set { _bufferSize = (long) value; }
         }
 
         public bool DontJoinServers { get; set; } = false;
@@ -72,8 +72,8 @@ namespace NadekoBot.Services.Database.Models
         [NotMapped]
         public ulong ItemId
         {
-            get { return Convert.ToUInt64(_itemId); }
-            set { _itemId = Convert.ToInt64(value); }
+            get { return (ulong) _itemId; }
+            set { _itemId = (long) value; }
         }
 
         public enum BlacklistType

@@ -20,8 +20,8 @@ namespace NadekoBot.Services.Database.Models
         [NotMapped]
         public ulong GuildId
         {
-            get { return Convert.ToUInt64(_guildId); }
-            set { _guildId = Convert.ToInt64(value); }
+            get { return (ulong) _guildId; }
+            set { _guildId = (long) value; }
         }
         [Required]
         public string Keyword { get; set; }
@@ -38,8 +38,8 @@ namespace NadekoBot.Services.Database.Models
         [NotMapped]
         public ulong AuthorId
         {
-            get { return Convert.ToUInt64(_authorId); }
-            set { _authorId = Convert.ToInt64(value); }
+            get { return (ulong) _authorId; }
+            set { _authorId = (long) value; }
         }
         [Required]
         public string Text { get; set; }

@@ -23,8 +23,8 @@ namespace NadekoBot.Services.Database.Models
         [NotMapped]
         public ulong PrimaryTargetId
         {
-            get { return Convert.ToUInt64(_primaryTargetId); }
-            set { _primaryTargetId = Convert.ToInt64(value); }
+            get { return (ulong) _primaryTargetId; }
+            set { _primaryTargetId = (long) value; }
         }
 
         public SecondaryPermissionType SecondaryTarget { get; set; }

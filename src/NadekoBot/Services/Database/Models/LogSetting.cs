@@ -20,8 +20,8 @@ namespace NadekoBot.Services.Database.Models
         [NotMapped]
         public ulong ChannelId
         {
-            get { return Convert.ToUInt64(_channelId); }
-            set { _channelId = Convert.ToInt64(value); }
+            get { return (ulong) _channelId; }
+            set { _channelId = (long) value; }
         }
         public HashSet<IgnoredLogChannel> IgnoredChannels { get; set; }
 
@@ -52,8 +52,8 @@ namespace NadekoBot.Services.Database.Models
         [NotMapped]
         public ulong UserPresenceChannelId
         {
-            get { return Convert.ToUInt64(_userPresenceChannelId); }
-            set { _userPresenceChannelId = Convert.ToInt64(value); }
+            get { return (ulong) _userPresenceChannelId; }
+            set { _userPresenceChannelId = (long) value; }
         }
 
         //voicepresence
@@ -69,8 +69,8 @@ namespace NadekoBot.Services.Database.Models
         [NotMapped]
         public ulong VoicePresenceChannelId
         {
-            get { return Convert.ToUInt64(_voicePresenceChannelId); }
-            set { _voicePresenceChannelId = Convert.ToInt64(value); }
+            get { return (ulong) _voicePresenceChannelId; }
+            set { _voicePresenceChannelId = (long) value; }
         }
         public HashSet<IgnoredVoicePresenceChannel> IgnoredVoicePresenceChannelIds { get; set; }
 

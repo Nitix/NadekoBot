@@ -20,8 +20,8 @@ namespace NadekoBot.Services.Database.Models
         [NotMapped]
         public ulong GuildId
         {
-            get { return Convert.ToUInt64(_guildId); }
-            set { _guildId = Convert.ToInt64(value); }
+            get { return (ulong) _guildId; }
+            set { _guildId = (long) value; }
         }
         public bool DeleteMessageOnCommand { get; set; }
 
@@ -35,8 +35,8 @@ namespace NadekoBot.Services.Database.Models
         [NotMapped]
         public ulong AutoAssignRoleId
         {
-            get { return Convert.ToUInt64(_autoAssignRoleId); }
-            set { _autoAssignRoleId = Convert.ToInt64(value); }
+            get { return (ulong) _autoAssignRoleId; }
+            set { _autoAssignRoleId = (long) value; }
         }
 
         //greet stuff
@@ -54,8 +54,8 @@ namespace NadekoBot.Services.Database.Models
         [NotMapped]
         public ulong GreetMessageChannelId
         {
-            get { return Convert.ToUInt64(_greetMessageChannelId); }
-            set { _greetMessageChannelId = Convert.ToInt64(value); }
+            get { return (ulong) _greetMessageChannelId; }
+            set { _greetMessageChannelId = (long) value; }
         }
 
         /// <summary>
@@ -68,8 +68,8 @@ namespace NadekoBot.Services.Database.Models
         [NotMapped]
         public ulong ByeMessageChannelId
         {
-            get { return Convert.ToUInt64(_byeMessageChannelId); }
-            set { _byeMessageChannelId = Convert.ToInt64(value); }
+            get { return (ulong) _byeMessageChannelId; }
+            set { _byeMessageChannelId = (long) value; }
         }
 
         public bool SendDmGreetMessage { get; set; }
@@ -103,8 +103,8 @@ namespace NadekoBot.Services.Database.Models
         [NotMapped]
         public ulong? GenerateCurrencyChannelId
         {
-            get { return _generateCurrencyChannelId.HasValue ? Convert.ToUInt64(_generateCurrencyChannelId) : (ulong?) null; }
-            set { _generateCurrencyChannelId = Convert.ToInt64(value); }
+            get { return _generateCurrencyChannelId.HasValue ? (ulong) _generateCurrencyChannelId : (ulong?) null; }
+            set { _generateCurrencyChannelId = (long) value; }
         }
 
         //permissions
