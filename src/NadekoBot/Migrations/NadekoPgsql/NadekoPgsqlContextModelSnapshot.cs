@@ -22,6 +22,8 @@ namespace NadekoBot.Migrations.NadekoPgsql
 
                     b.Property<int?>("BotConfigId");
 
+                    b.Property<int>("Type");
+
                     b.Property<long>("_itemId")
                         .HasColumnName("ItemId");
 
@@ -181,6 +183,43 @@ namespace NadekoBot.Migrations.NadekoPgsql
                     b.ToTable("EightBallResponses");
                 });
 
+            modelBuilder.Entity("NadekoBot.Services.Database.Models.FilterChannelId", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<int?>("GuildConfigId");
+
+                    b.Property<int?>("GuildConfigId1");
+
+                    b.Property<long>("_channelId")
+                        .HasColumnName("ChannelId");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("GuildConfigId");
+
+                    b.HasIndex("GuildConfigId1");
+
+                    b.ToTable("FilterChannelId");
+                });
+
+            modelBuilder.Entity("NadekoBot.Services.Database.Models.FilteredWord", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<int?>("GuildConfigId");
+
+                    b.Property<string>("Word");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("GuildConfigId");
+
+                    b.ToTable("FilteredWord");
+                });
+
             modelBuilder.Entity("NadekoBot.Services.Database.Models.FollowedStream", b =>
                 {
                     b.Property<int>("Id")
@@ -231,6 +270,10 @@ namespace NadekoBot.Migrations.NadekoPgsql
                     b.Property<string>("DmGreetMessageText");
 
                     b.Property<bool>("ExclusiveSelfAssignedRoles");
+
+                    b.Property<bool>("FilterInvites");
+
+                    b.Property<bool>("FilterWords");
 
                     b.Property<int?>("LogSettingId");
 
@@ -328,8 +371,6 @@ namespace NadekoBot.Migrations.NadekoPgsql
 
                     b.Property<bool>("MessageDeleted");
 
-                    b.Property<bool>("MessageReceived");
-
                     b.Property<bool>("MessageUpdated");
 
                     b.Property<bool>("UserBanned");
@@ -374,6 +415,23 @@ namespace NadekoBot.Migrations.NadekoPgsql
                     b.ToTable("ModulePrefixes");
                 });
 
+            modelBuilder.Entity("NadekoBot.Services.Database.Models.MusicPlaylist", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<string>("Author");
+
+                    b.Property<string>("Name");
+
+                    b.Property<long>("_authorId")
+                        .HasColumnName("AuthorId");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("MusicPlaylists");
+                });
+
             modelBuilder.Entity("NadekoBot.Services.Database.Models.Permission", b =>
                 {
                     b.Property<int>("Id")
@@ -416,6 +474,30 @@ namespace NadekoBot.Migrations.NadekoPgsql
                     b.HasIndex("BotConfigId");
 
                     b.ToTable("PlayingStatus");
+                });
+
+            modelBuilder.Entity("NadekoBot.Services.Database.Models.PlaylistSong", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<int?>("MusicPlaylistId");
+
+                    b.Property<string>("Provider");
+
+                    b.Property<int>("ProviderType");
+
+                    b.Property<string>("Query");
+
+                    b.Property<string>("Title");
+
+                    b.Property<string>("Uri");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("MusicPlaylistId");
+
+                    b.ToTable("PlaylistSong");
                 });
 
             modelBuilder.Entity("NadekoBot.Services.Database.Models.Quote", b =>
@@ -564,6 +646,24 @@ namespace NadekoBot.Migrations.NadekoPgsql
                         .HasForeignKey("BotConfigId");
                 });
 
+            modelBuilder.Entity("NadekoBot.Services.Database.Models.FilterChannelId", b =>
+                {
+                    b.HasOne("NadekoBot.Services.Database.Models.GuildConfig")
+                        .WithMany("FilterInvitesChannelIds")
+                        .HasForeignKey("GuildConfigId");
+
+                    b.HasOne("NadekoBot.Services.Database.Models.GuildConfig")
+                        .WithMany("FilterWordsChannelIds")
+                        .HasForeignKey("GuildConfigId1");
+                });
+
+            modelBuilder.Entity("NadekoBot.Services.Database.Models.FilteredWord", b =>
+                {
+                    b.HasOne("NadekoBot.Services.Database.Models.GuildConfig")
+                        .WithMany("FilteredWords")
+                        .HasForeignKey("GuildConfigId");
+                });
+
             modelBuilder.Entity("NadekoBot.Services.Database.Models.FollowedStream", b =>
                 {
                     b.HasOne("NadekoBot.Services.Database.Models.GuildConfig")
@@ -616,6 +716,14 @@ namespace NadekoBot.Migrations.NadekoPgsql
                     b.HasOne("NadekoBot.Services.Database.Models.BotConfig")
                         .WithMany("RotatingStatusMessages")
                         .HasForeignKey("BotConfigId");
+                });
+
+            modelBuilder.Entity("NadekoBot.Services.Database.Models.PlaylistSong", b =>
+                {
+                    b.HasOne("NadekoBot.Services.Database.Models.MusicPlaylist")
+                        .WithMany("Songs")
+                        .HasForeignKey("MusicPlaylistId")
+                        .OnDelete(DeleteBehavior.Cascade);
                 });
 
             modelBuilder.Entity("NadekoBot.Services.Database.Models.RaceAnimal", b =>

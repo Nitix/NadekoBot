@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace NadekoBot.Migrations.NadekoPgsql
 {
-    public partial class bigint : Migration
+    public partial class Initial : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -106,7 +106,6 @@ namespace NadekoBot.Migrations.NadekoPgsql
                     LogUserPresence = table.Column<bool>(nullable: false),
                     LogVoicePresence = table.Column<bool>(nullable: false),
                     MessageDeleted = table.Column<bool>(nullable: false),
-                    MessageReceived = table.Column<bool>(nullable: false),
                     MessageUpdated = table.Column<bool>(nullable: false),
                     UserBanned = table.Column<bool>(nullable: false),
                     UserJoined = table.Column<bool>(nullable: false),
@@ -120,6 +119,21 @@ namespace NadekoBot.Migrations.NadekoPgsql
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_LogSettings", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "MusicPlaylists",
+                columns: table => new
+                {
+                    Id = table.Column<int>(nullable: false)
+                        .Annotation("Npgsql:ValueGeneratedOnAdd", true),
+                    Author = table.Column<string>(nullable: true),
+                    Name = table.Column<string>(nullable: true),
+                    AuthorId = table.Column<long>(nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_MusicPlaylists", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -233,6 +247,7 @@ namespace NadekoBot.Migrations.NadekoPgsql
                     Id = table.Column<int>(nullable: false)
                         .Annotation("Npgsql:ValueGeneratedOnAdd", true),
                     BotConfigId = table.Column<int>(nullable: true),
+                    Type = table.Column<int>(nullable: false),
                     ItemId = table.Column<long>(nullable: false)
                 },
                 constraints: table =>
@@ -392,6 +407,30 @@ namespace NadekoBot.Migrations.NadekoPgsql
                 });
 
             migrationBuilder.CreateTable(
+                name: "PlaylistSong",
+                columns: table => new
+                {
+                    Id = table.Column<int>(nullable: false)
+                        .Annotation("Npgsql:ValueGeneratedOnAdd", true),
+                    MusicPlaylistId = table.Column<int>(nullable: true),
+                    Provider = table.Column<string>(nullable: true),
+                    ProviderType = table.Column<int>(nullable: false),
+                    Query = table.Column<string>(nullable: true),
+                    Title = table.Column<string>(nullable: true),
+                    Uri = table.Column<string>(nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_PlaylistSong", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_PlaylistSong_MusicPlaylists_MusicPlaylistId",
+                        column: x => x.MusicPlaylistId,
+                        principalTable: "MusicPlaylists",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "GuildConfigs",
                 columns: table => new
                 {
@@ -407,6 +446,8 @@ namespace NadekoBot.Migrations.NadekoPgsql
                     DeleteMessageOnCommand = table.Column<bool>(nullable: false),
                     DmGreetMessageText = table.Column<string>(nullable: true),
                     ExclusiveSelfAssignedRoles = table.Column<bool>(nullable: false),
+                    FilterInvites = table.Column<bool>(nullable: false),
+                    FilterWords = table.Column<bool>(nullable: false),
                     LogSettingId = table.Column<int>(nullable: true),
                     PermissionRole = table.Column<string>(nullable: true),
                     RootPermissionId = table.Column<int>(nullable: true),
@@ -434,6 +475,53 @@ namespace NadekoBot.Migrations.NadekoPgsql
                         name: "FK_GuildConfigs_Permission_RootPermissionId",
                         column: x => x.RootPermissionId,
                         principalTable: "Permission",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "FilterChannelId",
+                columns: table => new
+                {
+                    Id = table.Column<int>(nullable: false)
+                        .Annotation("Npgsql:ValueGeneratedOnAdd", true),
+                    GuildConfigId = table.Column<int>(nullable: true),
+                    GuildConfigId1 = table.Column<int>(nullable: true),
+                    ChannelId = table.Column<long>(nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_FilterChannelId", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_FilterChannelId_GuildConfigs_GuildConfigId",
+                        column: x => x.GuildConfigId,
+                        principalTable: "GuildConfigs",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
+                    table.ForeignKey(
+                        name: "FK_FilterChannelId_GuildConfigs_GuildConfigId1",
+                        column: x => x.GuildConfigId1,
+                        principalTable: "GuildConfigs",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "FilteredWord",
+                columns: table => new
+                {
+                    Id = table.Column<int>(nullable: false)
+                        .Annotation("Npgsql:ValueGeneratedOnAdd", true),
+                    GuildConfigId = table.Column<int>(nullable: true),
+                    Word = table.Column<string>(nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_FilteredWord", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_FilteredWord_GuildConfigs_GuildConfigId",
+                        column: x => x.GuildConfigId,
+                        principalTable: "GuildConfigs",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
                 });
@@ -490,6 +578,21 @@ namespace NadekoBot.Migrations.NadekoPgsql
                 column: "BotConfigId");
 
             migrationBuilder.CreateIndex(
+                name: "IX_FilterChannelId_GuildConfigId",
+                table: "FilterChannelId",
+                column: "GuildConfigId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_FilterChannelId_GuildConfigId1",
+                table: "FilterChannelId",
+                column: "GuildConfigId1");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_FilteredWord_GuildConfigId",
+                table: "FilteredWord",
+                column: "GuildConfigId");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_FollowedStream_GuildConfigId",
                 table: "FollowedStream",
                 column: "GuildConfigId");
@@ -537,6 +640,11 @@ namespace NadekoBot.Migrations.NadekoPgsql
                 column: "BotConfigId");
 
             migrationBuilder.CreateIndex(
+                name: "IX_PlaylistSong_MusicPlaylistId",
+                table: "PlaylistSong",
+                column: "MusicPlaylistId");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_RaceAnimals_BotConfigId",
                 table: "RaceAnimals",
                 column: "BotConfigId");
@@ -575,6 +683,12 @@ namespace NadekoBot.Migrations.NadekoPgsql
                 name: "EightBallResponses");
 
             migrationBuilder.DropTable(
+                name: "FilterChannelId");
+
+            migrationBuilder.DropTable(
+                name: "FilteredWord");
+
+            migrationBuilder.DropTable(
                 name: "FollowedStream");
 
             migrationBuilder.DropTable(
@@ -588,6 +702,9 @@ namespace NadekoBot.Migrations.NadekoPgsql
 
             migrationBuilder.DropTable(
                 name: "PlayingStatus");
+
+            migrationBuilder.DropTable(
+                name: "PlaylistSong");
 
             migrationBuilder.DropTable(
                 name: "Quotes");
@@ -612,6 +729,9 @@ namespace NadekoBot.Migrations.NadekoPgsql
 
             migrationBuilder.DropTable(
                 name: "GuildConfigs");
+
+            migrationBuilder.DropTable(
+                name: "MusicPlaylists");
 
             migrationBuilder.DropTable(
                 name: "BotConfig");
