@@ -76,6 +76,8 @@ namespace NadekoBot.Services.Database.Models
             set { _itemId = (long) value; }
         }
 
+        public BlacklistType Type { get; set; }
+
         public enum BlacklistType
         {
             Server,

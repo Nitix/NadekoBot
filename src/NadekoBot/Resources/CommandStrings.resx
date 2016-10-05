@@ -238,7 +238,7 @@
     <value>logserver</value>
   </data>
   <data name="logserver_desc" xml:space="preserve">
-    <value>Toggles logging in this channel. Logs every message sent/deleted/edited on the server. **Bot Owner Only!**</value>
+    <value>Logs server activity in this channel.</value>
   </data>
   <data name="logserver_summary" xml:space="preserve">
     <value>`.logserver`</value>
@@ -301,7 +301,7 @@
     <value>addplaying adpl</value>
   </data>
   <data name="addplaying_desc" xml:space="preserve">
-    <value>Adds a specified string to the list of playing strings to rotate. Supported placeholders: %servers%, %users%, %playing%, %queued%, %trivia% **Bot Owner Only!**</value>
+    <value>Adds a specified string to the list of playing strings to rotate. Supported placeholders: %servers%, %users%, %playing%, %queued%</value>
   </data>
   <data name="addplaying_summary" xml:space="preserve">
     <value>`.adpl`</value>
@@ -382,7 +382,7 @@
     <value>asar</value>
   </data>
   <data name="asar_desc" xml:space="preserve">
-    <value>Adds a role, or list of roles separated by whitespace(use quotations for multiword roles) to the list of self-assignable roles. **Needs Manage Roles Permissions.**</value>
+    <value>Adds a role, or list of roles separated by whitespace(use quotations for multiword roles) to the list of self-assignable roles.</value>
   </data>
   <data name="asar_summary" xml:space="preserve">
     <value>`.asar Gamer`</value>
@@ -436,7 +436,7 @@
     <value>addcustreact acr</value>
   </data>
   <data name="addcustreact_desc" xml:space="preserve">
-    <value>Add a custom reaction. Guide here: &lt;https://github.com/Kwoth/NadekoBot/wiki/Custom-Reactions&gt; **Bot Owner Only!**</value>
+    <value>Add a custom reaction. Guide here: &lt;https://github.com/Kwoth/NadekoBot/wiki/Custom-Reactions&gt;</value>
   </data>
   <data name="addcustreact_summary" xml:space="preserve">
     <value>`.acr "hello" Hi there %user%`</value>
@@ -481,7 +481,7 @@
     <value>autoassignrole aar</value>
   </data>
   <data name="autoassignrole_desc" xml:space="preserve">
-    <value>Automaticaly assigns a specified role to every user who joins the server. **Needs Manage Roles Permissions.**</value>
+    <value>Automaticaly assigns a specified role to every user who joins the server. </value>
   </data>
   <data name="autoassignrole_summary" xml:space="preserve">
     <value>`.aar` to disable, `.aar Role Name` to enable</value>
@@ -589,7 +589,7 @@
     <value>ban b</value>
   </data>
   <data name="ban_desc" xml:space="preserve">
-    <value>Bans a user by id or name with an optional message. **Needs Ban Permissions.**</value>
+    <value>Bans a user by id or name with an optional message.</value>
   </data>
   <data name="ban_summary" xml:space="preserve">
     <value>`.b "@some Guy" Your behaviour is toxic.`</value>
@@ -805,7 +805,7 @@
     <value>announce</value>
   </data>
   <data name="announce_desc" xml:space="preserve">
-    <value>Sends a message to all servers' general channel bot is connected to.**Bot Owner Only!**</value>
+    <value>Sends a message to all servers' general channel bot is connected to.</value>
   </data>
   <data name="announce_summary" xml:space="preserve">
     <value>`.announce Useless spam`</value>
@@ -919,7 +919,7 @@
     <value>`.uid` or `.uid "@SomeGuy"`</value>
   </data>
   <data name="channelid_text" xml:space="preserve">
-    <value>channelid</value>
+    <value>channelid cid</value>
   </data>
   <data name="channelid_desc" xml:space="preserve">
     <value>Shows current channel ID.</value>
@@ -981,14 +981,14 @@
   <data name="chnlfilterwords_summary" xml:space="preserve">
     <value>`;cfw enable #general-chat`</value>
   </data>
-  <data name="addfilterword_text" xml:space="preserve">
-    <value>addfilterword afw</value>
+  <data name="filterword_text" xml:space="preserve">
+    <value>fw</value>
   </data>
-  <data name="addfilterword_desc" xml:space="preserve">
-    <value>Adds a new word to the list of filtered words</value>
+  <data name="filterword_desc" xml:space="preserve">
+    <value>Adds or removes (if it exists) a word from the list of filtered words</value>
   </data>
-  <data name="addfilterword_summary" xml:space="preserve">
-    <value>`;afw poop`</value>
+  <data name="filterword_summary" xml:space="preserve">
+    <value>`;fw poop`</value>
   </data>
   <data name="rmvfilterword_text" xml:space="preserve">
     <value>rmvfilterword rw</value>
@@ -1174,63 +1174,36 @@
     <value>allsrvrmdls asm</value>
   </data>
   <data name="allsrvrmdls_desc" xml:space="preserve">
-    <value>Sets permissions for all modules at the server level.</value>
+    <value>Enable or disable all modules for your server.</value>
   </data>
   <data name="allsrvrmdls_summary" xml:space="preserve">
     <value>`;asm [enable/disable]`</value>
-  </data>
-  <data name="allsrvrcmds_text" xml:space="preserve">
-    <value>allsrvrcmds asc</value>
-  </data>
-  <data name="allsrvrcmds_desc" xml:space="preserve">
-    <value>Sets permissions for all commands from a certain module at the server level.</value>
-  </data>
-  <data name="allsrvrcmds_summary" xml:space="preserve">
-    <value>`;asc "module name" [enable/disable]`</value>
   </data>
   <data name="allchnlmdls_text" xml:space="preserve">
     <value>allchnlmdls acm</value>
   </data>
   <data name="allchnlmdls_desc" xml:space="preserve">
-    <value>Sets permissions for all modules at the channel level.</value>
+    <value>Enable or disable all modules in a specified channel.</value>
   </data>
   <data name="allchnlmdls_summary" xml:space="preserve">
-    <value>`;acm [enable/disable] SomeChannel`</value>
-  </data>
-  <data name="allchnlcmds_text" xml:space="preserve">
-    <value>allchnlcmds acc</value>
-  </data>
-  <data name="allchnlcmds_desc" xml:space="preserve">
-    <value>Sets permissions for all commands from a certain module at the channel level.</value>
-  </data>
-  <data name="allchnlcmds_summary" xml:space="preserve">
-    <value>`;acc "module name" [enable/disable] SomeChannel`</value>
+    <value>`;acm enable #SomeChannel`</value>
   </data>
   <data name="allrolemdls_text" xml:space="preserve">
     <value>allrolemdls arm</value>
   </data>
   <data name="allrolemdls_desc" xml:space="preserve">
-    <value>Sets permissions for all modules at the role level.</value>
+    <value>Enable or disable all modules for a specific role.</value>
   </data>
   <data name="allrolemdls_summary" xml:space="preserve">
     <value>`;arm [enable/disable] MyRole`</value>
   </data>
-  <data name="allrolecmds_text" xml:space="preserve">
-    <value>allrolecmds acmdcds</value>
-  </data>
-  <data name="allrolecmds_desc" xml:space="preserve">
-    <value>Sets permissions for all commands from a certain module at the role level.</value>
-  </data>
-  <data name="allrolecmds_summary" xml:space="preserve">
-    <value>`;arc "module name" [enable/disable] MyRole`</value>
-  </data>
-  <data name="ubl_text" xml:space="preserve">
+  <data name="userblacklist_text" xml:space="preserve">
     <value>ubl</value>
   </data>
-  <data name="ubl_desc" xml:space="preserve">
+  <data name="userblacklist_desc" xml:space="preserve">
     <value>Blacklists a mentioned user. **Bot Owner Only!**</value>
   </data>
-  <data name="ubl_summary" xml:space="preserve">
+  <data name="userblacklist_summary" xml:space="preserve">
     <value>`;ubl [user_mention]`</value>
   </data>
   <data name="uubl_text" xml:space="preserve">
@@ -1242,13 +1215,13 @@
   <data name="uubl_summary" xml:space="preserve">
     <value>`;uubl [user_mention]`</value>
   </data>
-  <data name="cbl_text" xml:space="preserve">
+  <data name="channelblacklist_text" xml:space="preserve">
     <value>cbl</value>
   </data>
-  <data name="cbl_desc" xml:space="preserve">
+  <data name="channelblacklist_desc" xml:space="preserve">
     <value>Blacklists a mentioned channel (#general for example).</value>
   </data>
-  <data name="cbl_summary" xml:space="preserve">
+  <data name="channelblacklist_summary" xml:space="preserve">
     <value>`;cbl #some_channel`</value>
   </data>
   <data name="cubl_text" xml:space="preserve">
@@ -1260,13 +1233,13 @@
   <data name="cubl_summary" xml:space="preserve">
     <value>`;cubl #some_channel`</value>
   </data>
-  <data name="sbl_text" xml:space="preserve">
+  <data name="serverblacklist_text" xml:space="preserve">
     <value>sbl</value>
   </data>
-  <data name="sbl_desc" xml:space="preserve">
+  <data name="serverblacklist_desc" xml:space="preserve">
     <value>Blacklists a server by a name or id (#general for example). **BOT OWNER ONLY**</value>
   </data>
-  <data name="sbl_summary" xml:space="preserve">
+  <data name="serverblacklist_summary" xml:space="preserve">
     <value>`;sbl [servername/serverid]`</value>
   </data>
   <data name="cmdcooldown_text" xml:space="preserve">
@@ -1279,7 +1252,7 @@
     <value>`;cmdcd "some cmd" 5`</value>
   </data>
   <data name="allcmdcooldowns_text" xml:space="preserve">
-    <value>allcmdcooldowns</value>
+    <value>allcmdcooldowns acmdcds</value>
   </data>
   <data name="allcmdcooldowns_desc" xml:space="preserve">
     <value>Shows a list of all commands and their respective cooldowns.</value>
@@ -1291,10 +1264,10 @@
     <value>.</value>
   </data>
   <data name="addquote_desc" xml:space="preserve">
-    <value>Adds a new quote with the specified name (single word) and message (no limit).</value>
+    <value>Adds a new quote with the specified name and message.</value>
   </data>
   <data name="addquote_summary" xml:space="preserve">
-    <value>`.. abc My message`</value>
+    <value>`.. sayhi Hi`</value>
   </data>
   <data name="showquote_text" xml:space="preserve">
     <value>..</value>
@@ -1494,13 +1467,13 @@
   <data name="leaderboard_summary" xml:space="preserve">
     <value>`$lb`</value>
   </data>
-  <data name="t_text" xml:space="preserve">
+  <data name="trivia_text" xml:space="preserve">
     <value>trivia t</value>
   </data>
-  <data name="t_desc" xml:space="preserve">
+  <data name="trivia_desc" xml:space="preserve">
     <value>Starts a game of trivia. You can add nohint to prevent hints.First player to get to 10 points wins by default. You can specify a different number. 30 seconds per question.</value>
   </data>
-  <data name="t_summary" xml:space="preserve">
+  <data name="trivia_summary" xml:space="preserve">
     <value>`&gt;t nohint` or `&gt;t 5 nohint`</value>
   </data>
   <data name="tl_text" xml:space="preserve">
@@ -1962,33 +1935,6 @@
   <data name="beam_summary" xml:space="preserve">
     <value>`~beam SomeStreamer`</value>
   </data>
-  <data name="checkhitbox_text" xml:space="preserve">
-    <value>checkhitbox chhb</value>
-  </data>
-  <data name="checkhitbox_desc" xml:space="preserve">
-    <value>Checks if a certain user is streaming on the hitbox platform.</value>
-  </data>
-  <data name="checkhitbox_summary" xml:space="preserve">
-    <value>`~chhb SomeStreamer`</value>
-  </data>
-  <data name="checktwitch_text" xml:space="preserve">
-    <value>checktwitch chtw</value>
-  </data>
-  <data name="checktwitch_desc" xml:space="preserve">
-    <value>Checks if a certain user is streaming on the twitch platform.</value>
-  </data>
-  <data name="checktwitch_summary" xml:space="preserve">
-    <value>`~chtw SomeStreamer`</value>
-  </data>
-  <data name="checkbeam_text" xml:space="preserve">
-    <value>checkbeam chbm</value>
-  </data>
-  <data name="checkbeam_desc" xml:space="preserve">
-    <value>Checks if a certain user is streaming on the beam platform.</value>
-  </data>
-  <data name="checkbeam_summary" xml:space="preserve">
-    <value>`~chbm SomeStreamer`</value>
-  </data>
   <data name="removestream_text" xml:space="preserve">
     <value>removestream rms</value>
   </data>
@@ -2059,7 +2005,7 @@
     <value>Shows information about an osu beatmap.</value>
   </data>
   <data name="osub_summary" xml:space="preserve">
-    <value>`~osu b https://osu.ppy.sh/s/127712`</value>
+    <value>`~osub https://osu.ppy.sh/s/127712`</value>
   </data>
   <data name="osu5_text" xml:space="preserve">
     <value>osu5</value>
@@ -2068,7 +2014,7 @@
     <value>Displays a user's top 5 plays.</value>
   </data>
   <data name="osu5_summary" xml:space="preserve">
-    <value>`~osu top5 Name`</value>
+    <value>`~osu5 Name`</value>
   </data>
   <data name="pokemon_text" xml:space="preserve">
     <value>pokemon poke</value>
@@ -2131,7 +2077,7 @@
     <value>Queries anilist for an anime and shows the first result.</value>
   </data>
   <data name="ani_summary" xml:space="preserve">
-    <value>`~aq aquarion evol`</value>
+    <value>`~ani aquarion evol`</value>
   </data>
   <data name="imdb_text" xml:space="preserve">
     <value>imdb</value>
@@ -2646,17 +2592,8 @@
   <data name="listperms_text" xml:space="preserve">
     <value>listperms lp</value>
   </data>
-  <data name="allusrcmds_desc" xml:space="preserve">
-    <value>Sets permission for all commands from a module for a specific user.</value>
-  </data>
-  <data name="allusrcmds_summary" xml:space="preserve">
-    <value>`;auc Searches disable @Someone`</value>
-  </data>
-  <data name="allusrcmds_text" xml:space="preserve">
-    <value>allusrcmds auc</value>
-  </data>
   <data name="allusrmdls_desc" xml:space="preserve">
-    <value>Sets permission for all modules for a specific user.</value>
+    <value>Enable or disable all modules for a specific user.</value>
   </data>
   <data name="allusrmdls_summary" xml:space="preserve">
     <value>`;aum enable @someone`</value>
@@ -2681,5 +2618,14 @@
   </data>
   <data name="removeperm_text" xml:space="preserve">
     <value>removeperm rp</value>
+  </data>
+  <data name="checkstream_desc" xml:space="preserve">
+    <value>Checks if a user is online on a certain streaming platform.</value>
+  </data>
+  <data name="checkstream_summary" xml:space="preserve">
+    <value>`~cs twitch MyFavStreamer`</value>
+  </data>
+  <data name="checkstream_text" xml:space="preserve">
+    <value>checkstream cs</value>
   </data>
 </root>

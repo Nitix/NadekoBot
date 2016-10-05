@@ -87,7 +87,7 @@ namespace NadekoBot.Resources {
         }
         
         /// <summary>
-        ///    Looks up a localized string similar to Add a custom reaction. Guide here: &lt;https://github.com/Kwoth/NadekoBot/wiki/Custom-Reactions&gt; **Bot Owner Only!**.
+        ///    Looks up a localized string similar to Add a custom reaction. Guide here: &lt;https://github.com/Kwoth/NadekoBot/wiki/Custom-Reactions&gt;.
         /// </summary>
         public static string addcustreact_desc {
             get {
@@ -114,34 +114,7 @@ namespace NadekoBot.Resources {
         }
         
         /// <summary>
-        ///    Looks up a localized string similar to Adds a new word to the list of filtered words.
-        /// </summary>
-        public static string addfilterword_desc {
-            get {
-                return ResourceManager.GetString("addfilterword_desc", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///    Looks up a localized string similar to `;afw poop`.
-        /// </summary>
-        public static string addfilterword_summary {
-            get {
-                return ResourceManager.GetString("addfilterword_summary", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///    Looks up a localized string similar to addfilterword afw.
-        /// </summary>
-        public static string addfilterword_text {
-            get {
-                return ResourceManager.GetString("addfilterword_text", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///    Looks up a localized string similar to Adds a specified string to the list of playing strings to rotate. Supported placeholders: %servers%, %users%, %playing%, %queued%, %trivia% **Bot Owner Only!**.
+        ///    Looks up a localized string similar to Adds a specified string to the list of playing strings to rotate. Supported placeholders: %servers%, %users%, %playing%, %queued%.
         /// </summary>
         public static string addplaying_desc {
             get {
@@ -168,7 +141,7 @@ namespace NadekoBot.Resources {
         }
         
         /// <summary>
-        ///    Looks up a localized string similar to Adds a new quote with the specified name (single word) and message (no limit)..
+        ///    Looks up a localized string similar to Adds a new quote with the specified name and message..
         /// </summary>
         public static string addquote_desc {
             get {
@@ -177,7 +150,7 @@ namespace NadekoBot.Resources {
         }
         
         /// <summary>
-        ///    Looks up a localized string similar to `.. abc My message`.
+        ///    Looks up a localized string similar to `.. sayhi Hi`.
         /// </summary>
         public static string addquote_summary {
             get {
@@ -195,34 +168,7 @@ namespace NadekoBot.Resources {
         }
         
         /// <summary>
-        ///    Looks up a localized string similar to Sets permissions for all commands from a certain module at the channel level..
-        /// </summary>
-        public static string allchnlcmds_desc {
-            get {
-                return ResourceManager.GetString("allchnlcmds_desc", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///    Looks up a localized string similar to `;acc &quot;module name&quot; [enable/disable] SomeChannel`.
-        /// </summary>
-        public static string allchnlcmds_summary {
-            get {
-                return ResourceManager.GetString("allchnlcmds_summary", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///    Looks up a localized string similar to allchnlcmds acc.
-        /// </summary>
-        public static string allchnlcmds_text {
-            get {
-                return ResourceManager.GetString("allchnlcmds_text", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///    Looks up a localized string similar to Sets permissions for all modules at the channel level..
+        ///    Looks up a localized string similar to Enable or disable all modules in a specified channel..
         /// </summary>
         public static string allchnlmdls_desc {
             get {
@@ -231,7 +177,7 @@ namespace NadekoBot.Resources {
         }
         
         /// <summary>
-        ///    Looks up a localized string similar to `;acm [enable/disable] SomeChannel`.
+        ///    Looks up a localized string similar to `;acm enable #SomeChannel`.
         /// </summary>
         public static string allchnlmdls_summary {
             get {
@@ -267,7 +213,7 @@ namespace NadekoBot.Resources {
         }
         
         /// <summary>
-        ///    Looks up a localized string similar to allcmdcooldowns.
+        ///    Looks up a localized string similar to allcmdcooldowns acmdcds.
         /// </summary>
         public static string allcmdcooldowns_text {
             get {
@@ -276,34 +222,7 @@ namespace NadekoBot.Resources {
         }
         
         /// <summary>
-        ///    Looks up a localized string similar to Sets permissions for all commands from a certain module at the role level..
-        /// </summary>
-        public static string allrolecmds_desc {
-            get {
-                return ResourceManager.GetString("allrolecmds_desc", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///    Looks up a localized string similar to `;arc &quot;module name&quot; [enable/disable] MyRole`.
-        /// </summary>
-        public static string allrolecmds_summary {
-            get {
-                return ResourceManager.GetString("allrolecmds_summary", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///    Looks up a localized string similar to allrolecmds acmdcds.
-        /// </summary>
-        public static string allrolecmds_text {
-            get {
-                return ResourceManager.GetString("allrolecmds_text", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///    Looks up a localized string similar to Sets permissions for all modules at the role level..
+        ///    Looks up a localized string similar to Enable or disable all modules for a specific role..
         /// </summary>
         public static string allrolemdls_desc {
             get {
@@ -330,34 +249,7 @@ namespace NadekoBot.Resources {
         }
         
         /// <summary>
-        ///    Looks up a localized string similar to Sets permissions for all commands from a certain module at the server level..
-        /// </summary>
-        public static string allsrvrcmds_desc {
-            get {
-                return ResourceManager.GetString("allsrvrcmds_desc", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///    Looks up a localized string similar to `;asc &quot;module name&quot; [enable/disable]`.
-        /// </summary>
-        public static string allsrvrcmds_summary {
-            get {
-                return ResourceManager.GetString("allsrvrcmds_summary", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///    Looks up a localized string similar to allsrvrcmds asc.
-        /// </summary>
-        public static string allsrvrcmds_text {
-            get {
-                return ResourceManager.GetString("allsrvrcmds_text", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///    Looks up a localized string similar to Sets permissions for all modules at the server level..
+        ///    Looks up a localized string similar to Enable or disable all modules for your server..
         /// </summary>
         public static string allsrvrmdls_desc {
             get {
@@ -384,34 +276,7 @@ namespace NadekoBot.Resources {
         }
         
         /// <summary>
-        ///    Looks up a localized string similar to Sets permission for all commands from a module for a specific user..
-        /// </summary>
-        public static string allusrcmds_desc {
-            get {
-                return ResourceManager.GetString("allusrcmds_desc", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///    Looks up a localized string similar to `;auc Searches disable @Someone`.
-        /// </summary>
-        public static string allusrcmds_summary {
-            get {
-                return ResourceManager.GetString("allusrcmds_summary", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///    Looks up a localized string similar to allusrcmds auc.
-        /// </summary>
-        public static string allusrcmds_text {
-            get {
-                return ResourceManager.GetString("allusrcmds_text", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///    Looks up a localized string similar to Sets permission for all modules for a specific user..
+        ///    Looks up a localized string similar to Enable or disable all modules for a specific user..
         /// </summary>
         public static string allusrmdls_desc {
             get {
@@ -447,7 +312,7 @@ namespace NadekoBot.Resources {
         }
         
         /// <summary>
-        ///    Looks up a localized string similar to `~aq aquarion evol`.
+        ///    Looks up a localized string similar to `~ani aquarion evol`.
         /// </summary>
         public static string ani_summary {
             get {
@@ -465,7 +330,7 @@ namespace NadekoBot.Resources {
         }
         
         /// <summary>
-        ///    Looks up a localized string similar to Sends a message to all servers&apos; general channel bot is connected to.**Bot Owner Only!**.
+        ///    Looks up a localized string similar to Sends a message to all servers&apos; general channel bot is connected to..
         /// </summary>
         public static string announce_desc {
             get {
@@ -492,7 +357,7 @@ namespace NadekoBot.Resources {
         }
         
         /// <summary>
-        ///    Looks up a localized string similar to Adds a role, or list of roles separated by whitespace(use quotations for multiword roles) to the list of self-assignable roles. **Needs Manage Roles Permissions.**.
+        ///    Looks up a localized string similar to Adds a role, or list of roles separated by whitespace(use quotations for multiword roles) to the list of self-assignable roles..
         /// </summary>
         public static string asar_desc {
             get {
@@ -546,7 +411,7 @@ namespace NadekoBot.Resources {
         }
         
         /// <summary>
-        ///    Looks up a localized string similar to Automaticaly assigns a specified role to every user who joins the server. **Needs Manage Roles Permissions.**.
+        ///    Looks up a localized string similar to Automaticaly assigns a specified role to every user who joins the server. .
         /// </summary>
         public static string autoassignrole_desc {
             get {
@@ -654,7 +519,7 @@ namespace NadekoBot.Resources {
         }
         
         /// <summary>
-        ///    Looks up a localized string similar to Bans a user by id or name with an optional message. **Needs Ban Permissions.**.
+        ///    Looks up a localized string similar to Bans a user by id or name with an optional message..
         /// </summary>
         public static string ban_desc {
             get {
@@ -1061,27 +926,27 @@ namespace NadekoBot.Resources {
         /// <summary>
         ///    Looks up a localized string similar to Blacklists a mentioned channel (#general for example)..
         /// </summary>
-        public static string cbl_desc {
+        public static string channelblacklist_desc {
             get {
-                return ResourceManager.GetString("cbl_desc", resourceCulture);
+                return ResourceManager.GetString("channelblacklist_desc", resourceCulture);
             }
         }
         
         /// <summary>
         ///    Looks up a localized string similar to `;cbl #some_channel`.
         /// </summary>
-        public static string cbl_summary {
+        public static string channelblacklist_summary {
             get {
-                return ResourceManager.GetString("cbl_summary", resourceCulture);
+                return ResourceManager.GetString("channelblacklist_summary", resourceCulture);
             }
         }
         
         /// <summary>
         ///    Looks up a localized string similar to cbl.
         /// </summary>
-        public static string cbl_text {
+        public static string channelblacklist_text {
             get {
-                return ResourceManager.GetString("cbl_text", resourceCulture);
+                return ResourceManager.GetString("channelblacklist_text", resourceCulture);
             }
         }
         
@@ -1104,7 +969,7 @@ namespace NadekoBot.Resources {
         }
         
         /// <summary>
-        ///    Looks up a localized string similar to channelid.
+        ///    Looks up a localized string similar to channelid cid.
         /// </summary>
         public static string channelid_text {
             get {
@@ -1167,60 +1032,6 @@ namespace NadekoBot.Resources {
         }
         
         /// <summary>
-        ///    Looks up a localized string similar to Checks if a certain user is streaming on the beam platform..
-        /// </summary>
-        public static string checkbeam_desc {
-            get {
-                return ResourceManager.GetString("checkbeam_desc", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///    Looks up a localized string similar to `~chbm SomeStreamer`.
-        /// </summary>
-        public static string checkbeam_summary {
-            get {
-                return ResourceManager.GetString("checkbeam_summary", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///    Looks up a localized string similar to checkbeam chbm.
-        /// </summary>
-        public static string checkbeam_text {
-            get {
-                return ResourceManager.GetString("checkbeam_text", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///    Looks up a localized string similar to Checks if a certain user is streaming on the hitbox platform..
-        /// </summary>
-        public static string checkhitbox_desc {
-            get {
-                return ResourceManager.GetString("checkhitbox_desc", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///    Looks up a localized string similar to `~chhb SomeStreamer`.
-        /// </summary>
-        public static string checkhitbox_summary {
-            get {
-                return ResourceManager.GetString("checkhitbox_summary", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///    Looks up a localized string similar to checkhitbox chhb.
-        /// </summary>
-        public static string checkhitbox_text {
-            get {
-                return ResourceManager.GetString("checkhitbox_text", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///    Looks up a localized string similar to Checks your userspecific permissions on this channel..
         /// </summary>
         public static string checkmyperms_desc {
@@ -1248,29 +1059,29 @@ namespace NadekoBot.Resources {
         }
         
         /// <summary>
-        ///    Looks up a localized string similar to Checks if a certain user is streaming on the twitch platform..
+        ///    Looks up a localized string similar to Checks if a user is online on a certain streaming platform..
         /// </summary>
-        public static string checktwitch_desc {
+        public static string checkstream_desc {
             get {
-                return ResourceManager.GetString("checktwitch_desc", resourceCulture);
+                return ResourceManager.GetString("checkstream_desc", resourceCulture);
             }
         }
         
         /// <summary>
-        ///    Looks up a localized string similar to `~chtw SomeStreamer`.
+        ///    Looks up a localized string similar to `~cs twitch MyFavStreamer`.
         /// </summary>
-        public static string checktwitch_summary {
+        public static string checkstream_summary {
             get {
-                return ResourceManager.GetString("checktwitch_summary", resourceCulture);
+                return ResourceManager.GetString("checkstream_summary", resourceCulture);
             }
         }
         
         /// <summary>
-        ///    Looks up a localized string similar to checktwitch chtw.
+        ///    Looks up a localized string similar to checkstream cs.
         /// </summary>
-        public static string checktwitch_text {
+        public static string checkstream_text {
             get {
-                return ResourceManager.GetString("checktwitch_text", resourceCulture);
+                return ResourceManager.GetString("checkstream_text", resourceCulture);
             }
         }
         
@@ -2540,6 +2351,33 @@ namespace NadekoBot.Resources {
         public static string endwar_text {
             get {
                 return ResourceManager.GetString("endwar_text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///    Looks up a localized string similar to Adds or removes (if it exists) a word from the list of filtered words.
+        /// </summary>
+        public static string filterword_desc {
+            get {
+                return ResourceManager.GetString("filterword_desc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///    Looks up a localized string similar to `;fw poop`.
+        /// </summary>
+        public static string filterword_summary {
+            get {
+                return ResourceManager.GetString("filterword_summary", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///    Looks up a localized string similar to fw.
+        /// </summary>
+        public static string filterword_text {
+            get {
+                return ResourceManager.GetString("filterword_text", resourceCulture);
             }
         }
         
@@ -3948,7 +3786,7 @@ namespace NadekoBot.Resources {
         }
         
         /// <summary>
-        ///    Looks up a localized string similar to Toggles logging in this channel. Logs every message sent/deleted/edited on the server. **Bot Owner Only!**.
+        ///    Looks up a localized string similar to Logs server activity in this channel..
         /// </summary>
         public static string logserver_desc {
             get {
@@ -4551,7 +4389,7 @@ namespace NadekoBot.Resources {
         }
         
         /// <summary>
-        ///    Looks up a localized string similar to `~osu top5 Name`.
+        ///    Looks up a localized string similar to `~osu5 Name`.
         /// </summary>
         public static string osu5_summary {
             get {
@@ -4578,7 +4416,7 @@ namespace NadekoBot.Resources {
         }
         
         /// <summary>
-        ///    Looks up a localized string similar to `~osu b https://osu.ppy.sh/s/127712`.
+        ///    Looks up a localized string similar to `~osub https://osu.ppy.sh/s/127712`.
         /// </summary>
         public static string osub_summary {
             get {
@@ -5973,33 +5811,6 @@ namespace NadekoBot.Resources {
         }
         
         /// <summary>
-        ///    Looks up a localized string similar to Blacklists a server by a name or id (#general for example). **BOT OWNER ONLY**.
-        /// </summary>
-        public static string sbl_desc {
-            get {
-                return ResourceManager.GetString("sbl_desc", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///    Looks up a localized string similar to `;sbl [servername/serverid]`.
-        /// </summary>
-        public static string sbl_summary {
-            get {
-                return ResourceManager.GetString("sbl_summary", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///    Looks up a localized string similar to sbl.
-        /// </summary>
-        public static string sbl_text {
-            get {
-                return ResourceManager.GetString("sbl_text", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///    Looks up a localized string similar to Starts an instance of cross server channel. You will get a token as a DM that other people will use to tune in to the same instance. **Bot Owner Only.**.
         /// </summary>
         public static string scsc_desc {
@@ -6050,6 +5861,33 @@ namespace NadekoBot.Resources {
         public static string send_text {
             get {
                 return ResourceManager.GetString("send_text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///    Looks up a localized string similar to Blacklists a server by a name or id (#general for example). **BOT OWNER ONLY**.
+        /// </summary>
+        public static string serverblacklist_desc {
+            get {
+                return ResourceManager.GetString("serverblacklist_desc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///    Looks up a localized string similar to `;sbl [servername/serverid]`.
+        /// </summary>
+        public static string serverblacklist_summary {
+            get {
+                return ResourceManager.GetString("serverblacklist_summary", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///    Looks up a localized string similar to sbl.
+        /// </summary>
+        public static string serverblacklist_text {
+            get {
+                return ResourceManager.GetString("serverblacklist_text", resourceCulture);
             }
         }
         
@@ -6729,33 +6567,6 @@ namespace NadekoBot.Resources {
         }
         
         /// <summary>
-        ///    Looks up a localized string similar to Starts a game of trivia. You can add nohint to prevent hints.First player to get to 10 points wins by default. You can specify a different number. 30 seconds per question..
-        /// </summary>
-        public static string t_desc {
-            get {
-                return ResourceManager.GetString("t_desc", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///    Looks up a localized string similar to `&gt;t nohint` or `&gt;t 5 nohint`.
-        /// </summary>
-        public static string t_summary {
-            get {
-                return ResourceManager.GetString("t_summary", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///    Looks up a localized string similar to trivia t.
-        /// </summary>
-        public static string t_text {
-            get {
-                return ResourceManager.GetString("t_text", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///    Looks up a localized string similar to Takes a certain amount of flowers from someone. **Bot Owner Only!**.
         /// </summary>
         public static string take_desc {
@@ -6918,6 +6729,33 @@ namespace NadekoBot.Resources {
         }
         
         /// <summary>
+        ///    Looks up a localized string similar to Starts a game of trivia. You can add nohint to prevent hints.First player to get to 10 points wins by default. You can specify a different number. 30 seconds per question..
+        /// </summary>
+        public static string trivia_desc {
+            get {
+                return ResourceManager.GetString("trivia_desc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///    Looks up a localized string similar to `&gt;t nohint` or `&gt;t 5 nohint`.
+        /// </summary>
+        public static string trivia_summary {
+            get {
+                return ResourceManager.GetString("trivia_summary", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///    Looks up a localized string similar to trivia t.
+        /// </summary>
+        public static string trivia_text {
+            get {
+                return ResourceManager.GetString("trivia_text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///    Looks up a localized string similar to Notifies this channel when a certain user starts streaming..
         /// </summary>
         public static string twitch_desc {
@@ -7049,33 +6887,6 @@ namespace NadekoBot.Resources {
         public static string typestop_text {
             get {
                 return ResourceManager.GetString("typestop_text", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///    Looks up a localized string similar to Blacklists a mentioned user. **Bot Owner Only!**.
-        /// </summary>
-        public static string ubl_desc {
-            get {
-                return ResourceManager.GetString("ubl_desc", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///    Looks up a localized string similar to `;ubl [user_mention]`.
-        /// </summary>
-        public static string ubl_summary {
-            get {
-                return ResourceManager.GetString("ubl_summary", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///    Looks up a localized string similar to ubl.
-        /// </summary>
-        public static string ubl_text {
-            get {
-                return ResourceManager.GetString("ubl_text", resourceCulture);
             }
         }
         
@@ -7238,6 +7049,33 @@ namespace NadekoBot.Resources {
         public static string urbandict_text {
             get {
                 return ResourceManager.GetString("urbandict_text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///    Looks up a localized string similar to Blacklists a mentioned user. **Bot Owner Only!**.
+        /// </summary>
+        public static string userblacklist_desc {
+            get {
+                return ResourceManager.GetString("userblacklist_desc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///    Looks up a localized string similar to `;ubl [user_mention]`.
+        /// </summary>
+        public static string userblacklist_summary {
+            get {
+                return ResourceManager.GetString("userblacklist_summary", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///    Looks up a localized string similar to ubl.
+        /// </summary>
+        public static string userblacklist_text {
+            get {
+                return ResourceManager.GetString("userblacklist_text", resourceCulture);
             }
         }
         

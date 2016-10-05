@@ -8,9 +8,10 @@ using NadekoBot.Services.Database.Impl;
 namespace NadekoBot.Migrations
 {
     [DbContext(typeof(NadekoSqliteContext))]
-    partial class NadekoSqliteContextModelSnapshot : ModelSnapshot
+    [Migration("20161003012137_blacklist")]
+    partial class blacklist
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
             modelBuilder
                 .HasAnnotation("ProductVersion", "1.0.0-rtm-21431");
@@ -177,42 +178,6 @@ namespace NadekoBot.Migrations
                     b.ToTable("EightBallResponses");
                 });
 
-            modelBuilder.Entity("NadekoBot.Services.Database.Models.FilterChannelId", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd();
-
-                    b.Property<ulong>("ChannelId");
-
-                    b.Property<int?>("GuildConfigId");
-
-                    b.Property<int?>("GuildConfigId1");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("GuildConfigId");
-
-                    b.HasIndex("GuildConfigId1");
-
-                    b.ToTable("FilterChannelId");
-                });
-
-            modelBuilder.Entity("NadekoBot.Services.Database.Models.FilteredWord", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd();
-
-                    b.Property<int?>("GuildConfigId");
-
-                    b.Property<string>("Word");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("GuildConfigId");
-
-                    b.ToTable("FilteredWord");
-                });
-
             modelBuilder.Entity("NadekoBot.Services.Database.Models.FollowedStream", b =>
                 {
                     b.Property<int>("Id")
@@ -265,10 +230,6 @@ namespace NadekoBot.Migrations
                     b.Property<string>("DmGreetMessageText");
 
                     b.Property<bool>("ExclusiveSelfAssignedRoles");
-
-                    b.Property<bool>("FilterInvites");
-
-                    b.Property<bool>("FilterWords");
 
                     b.Property<ulong?>("GenerateCurrencyChannelId");
 
@@ -614,24 +575,6 @@ namespace NadekoBot.Migrations
                     b.HasOne("NadekoBot.Services.Database.Models.BotConfig")
                         .WithMany("EightBallResponses")
                         .HasForeignKey("BotConfigId");
-                });
-
-            modelBuilder.Entity("NadekoBot.Services.Database.Models.FilterChannelId", b =>
-                {
-                    b.HasOne("NadekoBot.Services.Database.Models.GuildConfig")
-                        .WithMany("FilterInvitesChannelIds")
-                        .HasForeignKey("GuildConfigId");
-
-                    b.HasOne("NadekoBot.Services.Database.Models.GuildConfig")
-                        .WithMany("FilterWordsChannelIds")
-                        .HasForeignKey("GuildConfigId1");
-                });
-
-            modelBuilder.Entity("NadekoBot.Services.Database.Models.FilteredWord", b =>
-                {
-                    b.HasOne("NadekoBot.Services.Database.Models.GuildConfig")
-                        .WithMany("FilteredWords")
-                        .HasForeignKey("GuildConfigId");
                 });
 
             modelBuilder.Entity("NadekoBot.Services.Database.Models.FollowedStream", b =>

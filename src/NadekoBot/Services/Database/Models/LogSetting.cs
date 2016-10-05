@@ -25,7 +25,6 @@ namespace NadekoBot.Services.Database.Models
         }
         public HashSet<IgnoredLogChannel> IgnoredChannels { get; set; }
 
-        public bool MessageReceived { get; set; } = true;
         public bool MessageUpdated { get; set; } = true;
         public bool MessageDeleted { get; set; } = true;
 
